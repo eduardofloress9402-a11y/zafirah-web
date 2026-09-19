@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zafirah | Jabones Artesanales & Velas</title>
+    <style>
+        :root {
+            --cream-bg: #F9F5EF;
+            --cream-card: #FFFFFF;
+            --maroon: #7A2838;
+            --maroon-dark: #5C1D29;
+            --maroon-light: #F4E8EA;
+            --green: #25D366;
+            --green-dark: #1EBE5D;
+            --green-tag: #E8F5E9;
+            --green-text: #2E7D32;
+            --text-dark: #2C2C2C;
+            --text-muted: #666666;
+            --border-color: #E2D9CF;
+            --font-serif: 'Playfair Display', Georgia, serif;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--cream-bg);
+            color: var(--text-dark);
+            font-family: var(--font-sans);
+            line-height: 1.5;
+            background-image: radial-gradient(#E5DCCF 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Top Announcement Bar */
+        .top-bar {
+            background-color: var(--maroon);
+            color: #FFFFFF;
+            text-align: center;
+            padding: 8px 16px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        /* Header Navigation */
+        header {
+            background-color: var(--cream-bg);
+            border-bottom: 1px solid rgba(226, 217, 207, 0.5);
+            padding: 16px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--maroon);
+            letter-spacing: 3px;
+        }
+
+        .subtitle {
+            font-size: 9px;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-top: -2px;
+        }
+
+        nav {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-dark);
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--maroon);
+        }
+
+        .cart-icon-btn {
+            position: relative;
+            background: #FFFFFF;
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -4px;
+            right: -4px;
+            background-color: var(--maroon);
+            color: #fff;
+            font-size: 10px;
+            font-weight: 700;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Container Limit */
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 60px 0;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background-color: #EBF5EE;
+            color: #2D6A4F;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+        }
+
+        .hero-title {
+            font-family: var(--font-serif);
+            font-size: 44px;
+            line-height: 1.15;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        .hero-title-italic {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-weight: 400;
+            color: var(--maroon);
+            display: block;
+        }
+
+        .hero-desc {
+            color: var(--text-muted);
+            font-size: 15px;
+            margin-bottom: 30px;
+            max-width: 500px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .btn-maroon {
+            background-color: var(--maroon);
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-maroon:hover {
+            background-color: var(--maroon-dark);
+        }
+
+        .btn-green {
+            background-color: var(--green);
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-green:hover {
+            background-color: var(--green-dark);
+        }
+
+        .hero-promo-card {
+            background: #FFFFFF;
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            position: relative;
+        }
+
+        .badge-destacado {
+            background-color: var(--maroon);
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+
+        .promo-card-title {
+            font-family: var(--font-serif);
+            font-size: 26px;
+            margin-bottom: 6px;
+        }
+
+        .promo-card-sub {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .promo-price-box {
+            background-color: var(--maroon-light);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .promo-price-box .label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--maroon);
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .promo-price-box .price {
+            font-family: var(--font-serif);
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--maroon);
+        }
+
+        .promo-price-box .sub {
+            font-size: 12px;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        /* Section Titles */
+        .section-header {
+            text-align: center;
+            margin: 60px 0 30px;
+        }
+
+        .section-tag {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: 32px;
+            color: var(--text-dark);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50%;
+            height: 2px;
+            background-color: var(--maroon-light);
+            margin: 8px auto 0;
+        }
+
+        .section-sub {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-top: 8px;
+        }
+
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 16px;
+            margin-bottom: 50px;
+        }
+
+        .product-card {
+            background: #FFFFFF;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: left;
+            position: relative;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+        }
+
+        .product-img-box {
+            width: 100%;
+            height: 120px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 10px;
+            background-color: #F7F3EE;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .p-tag {
+            align-self: flex-start;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            padding: 2px 8px;
+            border-radius: 10px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+            background-color: #EFEFEF;
+            color: #555;
+        }
+
+        .product-name {
+            font-family: var(--font-serif);
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 4px;
+            line-height: 1.2;
+        }
+
+        .product-desc {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            flex-grow: 1;
+        }
+
+        .btn-add-cart {
+            width: 100%;
+            background: #FFFFFF;
+            border: 1px solid var(--border-color);
+            color: var(--text-dark);
+            padding: 6px 0;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-add-cart:hover {
+            background-color: var(--maroon);
+            color: #ffffff;
+            border-color: var(--maroon);
+        }
+
+        /* Wide Promo Banner */
+        .wide-banner {
+            background-color: var(--maroon);
+            color: #FFFFFF;
+            border-radius: 16px;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 40px 0 60px;
+        }
+
+        .wide-banner-tag {
+            background: rgba(255,255,255,0.2);
+            padding: 4px 12px;
+            border-radius: 10px;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .wide-banner-title {
+            font-family: var(--font-serif);
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .wide-banner-sub {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .wide-banner-card {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 12px;
+            padding: 20px 30px;
+            text-align: center;
+        }
+
+        .wide-banner-card .label {
+            font-size: 10px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            opacity: 0.8;
+            margin-bottom: 4px;
+        }
+
+        .wide-banner-card .price {
+            font-family: var(--font-serif);
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .btn-white {
+            background: #FFFFFF;
+            color: var(--maroon);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Pills Fragancias */
+        .pills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .pill {
+            background: #FFFFFF;
+            border: 1px solid var(--border-color);
+            padding: 6px 14px;
+            border-radius: 16px;
+            font-size: 12px;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Grid Velas */
+        .velas-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .vela-card {
+            background: #FFFFFF;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            position: relative;
+        }
+
+        .vela-card.popular {
+            border: 2px solid var(--maroon);
+        }
+
+        .badge-popular {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--maroon);
+            color: #fff;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 2px 10px;
+            border-radius: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        .vela-icon {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .vela-cat {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .vela-title {
+            font-family: var(--font-serif);
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        /* Banner Regalía */
+        .gift-banner {
+            background: #FFFFFF;
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .gift-title {
+            font-family: var(--font-serif);
+            font-size: 22px;
+            color: var(--maroon);
+            margin-bottom: 8px;
+        }
+
+        .gift-desc {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .btn-gray-pill {
+            background: #6B7A6E;
+            color: #FFFFFF;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Comparison Section */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .comp-card {
+            background: #FFFFFF;
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 30px;
+        }
+
+        .comp-card.highlight {
+            border: 2px solid var(--maroon);
+            background: #FFFFFF;
+        }
+
+        .comp-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .comp-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: var(--maroon);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-serif);
+            font-weight: 700;
+        }
+
+        .comp-icon.gray {
+            background-color: #A0A0A0;
+        }
+
+        .comp-title {
+            font-family: var(--font-serif);
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .comp-subtitle {
+            font-size: 10px;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .comp-item {
+            margin-bottom: 16px;
+        }
+
+        .comp-item-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .comp-item-desc {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        .comp-footer-pill {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .pill-quote {
+            display: inline-block;
+            background: #FFFFFF;
+            border: 1px solid var(--border-color);
+            padding: 8px 24px;
+            border-radius: 20px;
+            font-family: var(--font-serif);
+            font-size: 14px;
+            color: var(--text-dark);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--maroon);
+            color: #FFFFFF;
+            padding: 50px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            font-family: var(--font-serif);
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .footer-text {
+            font-size: 12px;
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        .footer-col-title {
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-links {
+            list-style: none;
+            font-size: 12px;
+            opacity: 0.9;
+        }
+
+        .footer-links li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Floating Whatsapp */
+        .btn-whatsapp-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background-color: var(--green);
+            color: #FFFFFF;
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 1000;
+        }
+
+        @media (max-width: 900px) {
+            .products-grid { grid-template-columns: repeat(2, 1fr); }
+            .hero { grid-template-columns: 1fr; }
+            .velas-grid { grid-template-columns: 1fr; }
+            .comparison-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .wide-banner { flex-direction: column; gap: 20px; text-align: center; }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Top Announcement Bar -->
+    <div class="top-bar">
+        ✨ PROMOCIÓN DÍA DE LA MADRE: Jabones 6 x $25.000 | Envíos en Córdoba Capital ✨
+    </div>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="logo-container">
+            <a href="#" class="logo">ZAFIRAH</a>
+            <span class="subtitle">Jabones Artesanales & Velas</span>
+        </div>
+        <nav>
+            <a href="#jabones">Jabones Artesanales</a>
+            <a href="#velas">Velas Aromáticas</a>
+            <a href="#promociones">Promociones</a>
+            <a href="#cera">Cera de Soja</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+        <div class="cart-icon-btn">
+            🛒
+            <span class="cart-count">0</span>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div>
+                <div class="hero-badge">
+                    🍃 Cosmética Natural & Bienestar
+                </div>
+                <h1 class="hero-title">
+                    Cada jabón, un ritual.
+                    <span class="hero-title-italic">Cada vela, un momento para el alma.</span>
+                </h1>
+                <p class="hero-desc">
+                    Creaciones artesanales hechas a mano en Córdoba. Utilizamos únicamente ingredientes 100% vegetales y aceites puros para mimar tu piel y armonizar tus ambientes.
+                </p>
+                <div class="hero-btns">
+                    <a href="#promociones" class="btn-maroon">VER PROMOCIONES ESPECIALES 🏷️</a>
+                    <a href="https://wa.me/5493510000000" target="_blank" class="btn-green">💬 PEDIR POR WHATSAPP</a>
+                </div>
+            </div>
+
+            <div class="hero-promo-card" id="promociones">
+                <span class="badge-destacado">DESTACADO</span>
+                <h2 class="promo-card-title">Promo Jabones Artesanales</h2>
+                <p class="promo-card-sub">Saponificados en frío con extractos naturales y aceites nutritivos</p>
+
+                <div class="promo-price-box">
+                    <div class="label">LLEVATE 6 JABONES VARIADOS</div>
+                    <div class="price">$25.000</div>
+                    <div class="sub">Elegí tus variaciones favoritas</div>
+                </div>
+
+                <button class="btn-add-cart" style="background-color: var(--maroon); color: #fff; padding: 10px 0; font-size: 12px;" onclick="alert('Promo agregada al carrito')">
+                    AGREGAR PROMO AL CARRITO
+                </button>
+            </div>
+        </section>
+
+        <!-- Section: Jabones -->
+        <section id="jabones">
+            <div class="section-header">
+                <div class="section-tag">LÍNEA DE COSMÉTICA BOTÁNICA</div>
+                <h2 class="section-title">Naturaleza que cuida tu piel</h2>
+                <p class="section-sub">Especialmente formulados para limpiar suavemente sin resecar la piel.</p>
+            </div>
+
+            <div class="products-grid">
+
+                <!-- 1. Coco y Carbón -->
+                <div class="product-card">
+                    <div class="product-img-box">
+                        <img src="img/cococarbon.jpg" alt="Coco y Carbón Activado" onerror="this.src='img/cococarbon.png'">
+                    </div>
+                    <span class="p-tag" style="background:#E8F5E9; color:#2E7D32;">DETOX</span>
+                    <h3 class="product-name">Coco y Carbón Activado</h3>
+                    <p class="product-desc">Desintoxicante y purificante profundo</p>
+                    <button class="btn-add-cart" onclick="alert('Agregado al carrito')">+ Agregar al Carrito</button>
+                </div>
+
+                <!-- 2. Avena y Miel -->
+                <div class="product-card">
+                    <div class="product-img-box">
+                        <img src="img/avenaymiel.jpg" alt="Avena y Miel" onerror="this.src='img/avenaymiel.png'">
+                    </div>
+                    <span class="p-tag" style="background:#FFF8E1; color:#F57F17;">NUTRITIVO</span>
+                    <h3 class="product-name">Avena y Miel</h3>
+                    <p class="product-desc">Exfoliación suave e hidratación nutritiva</p>
+                    <button class="btn-add-cart" onclick="alert('Agregado al carrito')">+ Agregar al Carrito</button>
+                </div>
+
+                <!-- 3. Arcilla Rosa -->
+                <div class="product-card">
+                    <div class="product-img-box">
+                        <img src="img/arcillarosaycoco.jpg" alt="Arcilla Rosa y Coco" onerror="this.src='img/arcillarosaycoco.png'">
+                    </div>
+                    <span class="p-tag" style="background:#FCE4EC; color:#C2185B;">SUAVE</span>
+                    <h3 class="product-name">Arcilla Rosa y Coco</h3>
+                    <p class="product-desc">Especial piel sensible y suavidad</p>
+                    <button class="btn-add-cart" onclick="alert('Agregado al carrito')">+ Agregar al Carrito</button>
+                </div>
+
+                <!-- 4. Avena Café y Miel -->
+                <div class="product-card">
+                    <div class="product-img-box">
+                        <img src="img/avencafeymiel.jpg" alt="Avena, Café y Miel" onerror="this.src='img/avencafeymiel.png'">
+                    </div>
+                    <span class="p-tag" style="background:#EFEBE9; color:#4E342E;">EXFOLIANTE</span>
+                    <h3 class="product-name">Avena, Café y Miel</h3>
+                    <p class="product-desc">Exfoliante corporal estimulante</p>
+                    <button class="btn-add-cart" onclick="alert('Agregado al carrito')">+ Agregar al Carrito</button>
+                </div>
+
+                <!-- 5. Coco y Sándalo -->
+                <div class="product-card">
+                    <div class="product-img-box">
+                        <img src="img/cocoysandalo.jpg" alt="Aceite de Coco y Sándalo Hindú" onerror="this.src='img/cocoysandalo.png'">
+                    </div>
+                    <span class="p-tag" style="background:#F3E5F5; color:#7B1FA2;">AROMÁTICO</span>
+                    <h3 class="product-name">Aceite de Coco y Sándalo Hindú</h3>
+                    <p class="product-desc">Aroma relajante y nutrición intensa</p>
+                    <button class="btn-add-cart" onclick="alert('Agregado al carrito')">+ Agregar al Carrito</button>
+                </div>
+
+                <!-- 6. Romero y Ruda -->
+                <div class="product-card">
+                    <div class="product-img-box">
+                        <img src="img/rudayromero.jpg" alt="Romero y Ruda" onerror="this.src='img/rudayromero.png'">
+                    </div>
+                    <span class="p-tag" style="background:#E8F5E9; color:#1B5E20;">ENERGÍA</span>
+                    <h3 class="product-name">Romero y Ruda</h3>
+                    <p class="product-desc">Energizante y renovador cutáneo</p>
+                    <button class="btn-add-cart" onclick="alert('Agregado al carrito')">+ Agregar al Carrito</button>
+                </div>
+
+                <!-- 7. Manzanilla y Caléndula -->
+                <div class="product-card">
+                    <div class="product-img-box">
+                        <img src="img/manzanillaycalendula.jpg" alt="Manzanilla y Caléndula" onerror="this.src='img/manzanillaycalendula.png'">
+                    </div>
+                    <span class="p-tag" style="background:#FFF3E0; color:#E65100;">CALMANTE</span>
+                    <h3 class="product-name">Manzanilla y Caléndula</h3>
+                    <p class="product-desc">Calmante natural para pieles delicadas</p>
+                    <button class="btn-add-cart" onclick="alert('Agregado al carrito')">+ Agregar al Carrito</button>
+                </div>
+
+                <!-- 8. Arroz y Cítricos -->
+                <div class="product-card">
+                    <div class="product-img-box">
+                        <img src="img/arrozycitricos.jpg" alt="Arroz, Aceite de Coco y Cítricos" onerror="this.src='img/arrozycitricos.png'">
+                    </div>
+                    <span class="p-tag" style="background:#E0F7FA; color:#006064;">REFRESCANTE</span>
+                    <h3 class="product-name">Arroz, Aceite de Coco y Cítricos</h3>
+                    <p class="product-desc">Aclarante suave y refrescante</p>
+                    <button class="btn-add-cart" onclick="alert('Agregado al carrito')">+ Agregar al Carrito</button>
+                </div>
+
+                <!-- 9. Lavanda Serena -->
+                <div class="product-card">
+                    <div class="product-img-box">
+                        <img src="img/lavandaserena.jpg" alt="Lavanda Serena" onerror="this.src='img/lavandaserena.png'">
+                    </div>
+                    <span class="p-tag" style="background:#EDE7F6; color:#512DA8;">RELAX</span>
+                    <h3 class="product-name">Lavanda Serena</h3>
+                    <p class="product-desc">Propiedades relajantes para tu rutina diaria</p>
+                    <button class="btn-add-cart" onclick="alert('Agregado al carrito')">+ Agregar al Carrito</button>
+                </div>
+
+                <!-- 10. Coco y Vainilla -->
+                <div class="product-card">
+                    <div class="product-img-box">
+                        <img src="img/cocoyvainilla.jpg" alt="Coco y Vainilla (Infantil)" onerror="this.src='img/cocoyvainilla.png'">
+                    </div>
+                    <span class="p-tag" style="background:#FFEBEE; color:#D32F2F;">INFANTIL</span>
+                    <h3 class="product-name">Coco y Vainilla (Infantil)</h3>
+                    <p class="product-desc">Fórmula suave para los más pequeños</p>
+                    <button class="btn-add-cart" onclick="alert('Agregado al carrito')">+ Agregar al Carrito</button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Banner Promocional -->
+        <section class="wide-banner">
+            <div>
+                <span class="wide-banner-tag">PRECIO PROMOCIONAL</span>
+                <h2 class="wide-banner-title">Encargá los tuyos antes que se agoten</h2>
+                <p class="wide-banner-sub">Combiná tus 6 fragancias favoritas de jabones artesanales por solo **$25.000**.</p>
+            </div>
+            <div class="wide-banner-card">
+                <div class="label">SUPER PROMO</div>
+                <div class="price">6 x $25.000</div>
+                <button class="btn-white" onclick="alert('Promo encargada')">🛒 APROVECHAR PROMOCIÓN</button>
+            </div>
+        </section>
+
+        <!-- Section: Velas -->
+        <section id="velas">
+            <div class="section-header">
+                <div class="section-tag">LÍNEA VELAS AROMÁTICAS</div>
+                <h2 class="section-title">Luz que cuida, momentos que importan</h2>
+                <p class="section-sub">Velas vertidas a mano con cera de soja vegetal 100% biodegradable y pabilo de algodón puro.</p>
+            </div>
+
+            <div class="pills-container">
+                <span class="pill">🌱 Café</span>
+                <span class="pill">🌱 Eucalipto - Lavanda</span>
+                <span class="pill">🌱 Jazmín</span>
+                <span class="pill">🌱 Lavanda</span>
+                <span class="pill">🌱 Mango y Maracuyá</span>
+                <span class="pill">🌱 Patchouly</span>
+                <span class="pill">🌱 Rosa Búlgara</span>
+                <span class="pill">🌱 Sándalo Dulce</span>
+                <span class="pill">🌱 Vainilla y Coco</span>
+            </div>
+
+            <div class="velas-grid">
+                <div class="vela-card">
+                    <div class="vela-icon">🫙</div>
+                    <div class="vela-cat">ECOLÓGICAS</div>
+                    <h3 class="vela-title">Línea ECO</h3>
+                    <button class="btn-add-cart">+ Agregar al Carrito</button>
+                </div>
+
+                <div class="vela-card popular">
+                    <span class="badge-popular">MÁS VENDIDA</span>
+                    <div class="vela-icon">🕯️</div>
+                    <div class="vela-cat">CÁLIDAS</div>
+                    <h3 class="vela-title">Vaso Ámbar</h3>
+                    <button class="btn-add-cart" style="background-color: var(--maroon); color: #fff;">+ Agregar al Carrito</button>
+                </div>
+
+                <div class="vela-card">
+                    <div class="vela-icon">🥃</div>
+                    <div class="vela-cat">ELEGANTE</div>
+                    <h3 class="vela-title">Vaso Cristal</h3>
+                    <button class="btn-add-cart">+ Agregar al Carrito</button>
+                </div>
+            </div>
+
+            <!-- Banner Regalo -->
+            <div class="gift-banner">
+                <span style="font-size: 11px; font-weight: 700; letter-spacing: 1px; color: var(--maroon); text-transform: uppercase;">ESPECIAL REGALÍA</span>
+                <h3 class="gift-title">¿Buscás una opción para regalo?</h3>
+                <p class="gift-desc">Consultanos por nuestros Combos Velas + Jabones presentados en cajas de regalo decoradas con flores secas.</p>
+                <button class="btn-gray-pill" onclick="window.open('https://wa.me/5493510000000', '_blank')">💬 CONSULTAR COMBOS VELAS + JABONES</button>
+            </div>
+        </section>
+
+        <!-- Section: Comparativa Cera de Soja -->
+        <section id="cera">
+            <div class="section-header">
+                <div class="section-tag">DIFERENCIA DE CALIDAD</div>
+                <h2 class="section-title">Hay diferencias que se sienten</h2>
+                <p class="section-sub">Lo natural también ilumina tu vida. Compará la Cera de Soja frente a la parafina común.</p>
+            </div>
+
+            <div class="comparison-grid">
+                <!-- Zafirah -->
+                <div class="comp-card highlight">
+                    <div class="comp-header">
+                        <div class="comp-icon">Z</div>
+                        <div>
+                            <div class="comp-title">ZAFIRAH</div>
+                            <div class="comp-subtitle">CERA DE SOJA 100% NATURAL</div>
+                        </div>
+                    </div>
+                    <div class="comp-item">
+                        <div class="comp-item-title">🍃 Origen y Ecología</div>
+                        <div class="comp-item-desc">100% natural, renovable y biodegradable. Derivada del aceite de soja.</div>
+                    </div>
+                    <div class="comp-item">
+                        <div class="comp-item-title">⏳ Duración</div>
+                        <div class="comp-item-desc">Punto de fusión bajo: arde despacio. Dura entre **30% y 50% más** que la parafina.</div>
+                    </div>
+                    <div class="comp-item">
+                        <div class="comp-item-title">✨ Hollín y Limpieza</div>
+                        <div class="comp-item-desc">Emite un 90% menos de hollín y no genera humo negro tóxico.</div>
+                    </div>
+                    <div class="comp-item">
+                        <div class="comp-item-title">💚 Uso y Salud</div>
+                        <div class="comp-item-desc">Textura cremosa y suave. Cuida tus pulmones y el medio ambiente.</div>
+                    </div>
+                </div>
+
+                <!-- Velas Comunes -->
+                <div class="comp-card">
+                    <div class="comp-header">
+                        <div class="comp-icon gray">🕯️</div>
+                        <div>
+                            <div class="comp-title">VELAS COMUNES</div>
+                            <div class="comp-subtitle">PARAFINA TRADICIONAL</div>
+                        </div>
+                    </div>
+                    <div class="comp-item">
+                        <div class="comp-item-title">🏭 Origen Derivado del Petróleo</div>
+                        <div class="comp-item-desc">Proviene de recursos fósiles no renovables y contamina al quemarse.</div>
+                    </div>
+                    <div class="comp-item">
+                        <div class="comp-item-title">⚡ Consumo Rápido</div>
+                        <div class="comp-item-desc">Se consume rápidamente a alta temperatura.</div>
+                    </div>
+                    <div class="comp-item">
+                        <div class="comp-item-title">💨 Residuos Negros</div>
+                        <div class="comp-item-desc">Produce residuos oscuros de hollín que ensucian paredes y techos.</div>
+                    </div>
+                    <div class="comp-item">
+                        <div class="comp-item-title">🏭 Producción Masiva</div>
+                        <div class="comp-item-desc">Fabricación industrial con fragancias sintéticas pesadas.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comp-footer-pill">
+                <span class="pill-quote">Elegí lo natural, elegí ZAFIRAH 🍃</span>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer id="contacto">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">ZAFIRAH</div>
+                    <p class="footer-text">
+                        Pequeñas elecciones, grandes cambios.<br>
+                        Jabones artesanales y velas aromáticas de cera de soja hechas a mano en Córdoba.
+                    </p>
+                </div>
+                <div>
+                    <div class="footer-col-title">Envíos & Entrega</div>
+                    <ul class="footer-links">
+                        <li>🚚 Consultá envíos en Córdoba</li>
+                        <li>🎁 Presentación lista para regalar</li>
+                        <li>🤲 Hechos a mano con amor</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="footer-col-title">Síguenos</div>
+                    <ul class="footer-links">
+                        <li>📷 <a href="https://instagram.com/zafirahjabones" target="_blank">@zafirahjabones</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="footer-col-title">Atención Personalizada</div>
+                    <p class="footer-text" style="margin-bottom: 10px;">¿Dudas o pedidos especiales para eventos?</p>
+                    <a href="https://wa.me/5493510000000" target="_blank" class="btn-green" style="font-size: 11px; padding: 8px 16px;">
+                        💬 Escribinos por WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/5493510000000" target="_blank" class="btn-whatsapp-float" title="Contactar por WhatsApp">
+        💬
+    </a>
+
+</body>
+</html>
