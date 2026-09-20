@@ -1,6 +1,17 @@
 window.cart = [];
 
-// Función para actualizar el contador y la lista dentro del desplegable
+// Función para abrir/cerrar el carrito manualmente
+window.toggleCartDropdown = function(event) {
+    if (event) event.stopPropagation();
+    const dropdown = document.getElementById('cart-dropdown');
+    if (!dropdown) return;
+
+    const isVisible = dropdown.style.display === 'block';
+    dropdown.style.display = isVisible ? 'none' : 'block';
+    if (!isVisible) window.updateCartUI();
+};
+
+// Actualizar el contador y la lista dentro del desplegable
 window.updateCartUI = function() {
     const totalItems = window.cart.reduce((sum, item) => sum + item.quantity, 0);
     const totalPrice = window.cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
@@ -60,7 +71,7 @@ function showToast(message) {
     if (!toast) {
         toast = document.createElement('div');
         toast.id = 'cart-toast';
-        toast.style.cssText = 'position: fixed; bottom: 20px; right: 20px; background: #333; color: #fff; padding: 12px 20px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); font-size: 14px; z-index: 9999; transition: opacity 0.3s ease; opacity: 0;';
+        toast.style.cssText = 'position: fixed; bottom: 20px; right: 20px; background: #333; color: #fff; padding: 12px 20px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); font-size: 14px; z-index: 99999; transition: opacity 0.3s ease; opacity: 0;';
         document.body.appendChild(toast);
     }
     toast.textContent = message;
@@ -105,35 +116,34 @@ window.sendToWhatsApp = function() {
 
     mensaje += `\n*TOTAL: $${total.toLocaleString('es-AR')}*`;
 
-    // Reemplazar con el número de teléfono del negocio si tenés uno asignado
     const numero = '5493510000000'; 
     const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
     window.open(url, '_blank');
 };
 
-// Manejo del desplegable y clicks afuera
+// Listeners al cargar la página
 document.addEventListener('DOMContentLoaded', () => {
     window.updateCartUI();
 
     const cartBtn = document.getElementById('cart-btn');
     const cartDropdown = document.getElementById('cart-dropdown');
 
-    if (cartBtn && cartDropdown) {
+    if (cartBtn) {
         cartBtn.addEventListener('click', (e) => {
-            // Evitar cerrar si se hace clic dentro del propio desplegable
-            if (e.target.closest('#cart-dropdown')) return;
-
-            const isVisible = cartDropdown.style.display === 'block';
-            cartDropdown.style.display = isVisible ? 'none' : 'block';
-        });
-
-        // Cerrar desplegable si hace clic fuera
-        document.addEventListener('click', (e) => {
-            if (!cartBtn.contains(e.target)) {
-                cartDropdown.style.display = 'none';
+            // Previene el cierre si hace clic dentro de la caja del carrito
+            if (cartDropdown && cartDropdown.contains(e.target) && e.target !== cartBtn) {
+                return;
             }
+            window.toggleCartDropdown(e);
         });
     }
+
+    // Cerrar el carrito desplegable si hace clic afuera
+    document.addEventListener('click', (e) => {
+        if (cartBtn && cartDropdown && !cartBtn.contains(e.target) && !cartDropdown.contains(e.target)) {
+            cartDropdown.style.display = 'none';
+        }
+    });
 });
 
 // --- Modal de Productos ---
@@ -165,7 +175,3 @@ window.onclick = function(event) {
         modal.style.display = 'none';
     }
 };
-    if (event && event.target === modal) {
-        modal.style.display = 'none';
-    }
-}
