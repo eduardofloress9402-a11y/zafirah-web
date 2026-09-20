@@ -116,7 +116,7 @@ window.sendToWhatsApp = function() {
 
     mensaje += `\n*TOTAL: $${total.toLocaleString('es-AR')}*`;
 
-    const numero = '5493510000000'; 
+    const numero = '5492966764069'; 
     const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
     window.open(url, '_blank');
 };
@@ -130,7 +130,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (cartBtn) {
         cartBtn.addEventListener('click', (e) => {
-            // Previene el cierre si hace clic dentro de la caja del carrito
             if (cartDropdown && cartDropdown.contains(e.target) && e.target !== cartBtn) {
                 return;
             }
@@ -138,7 +137,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Cerrar el carrito desplegable si hace clic afuera
     document.addEventListener('click', (e) => {
         if (cartBtn && cartDropdown && !cartBtn.contains(e.target) && !cartDropdown.contains(e.target)) {
             cartDropdown.style.display = 'none';
@@ -175,19 +173,27 @@ window.onclick = function(event) {
         modal.style.display = 'none';
     }
 };
-// Abrir / Cerrar Chatbot
+
+// --- Abrir / Cerrar Chatbot Flotante ---
 function toggleChatbot() {
     const chatWindow = document.getElementById('chatbot-window');
-    chatWindow.classList.toggle('hidden');
+    if (!chatWindow) return;
+    
+    if (chatWindow.style.display === 'none' || chatWindow.style.display === '') {
+        chatWindow.style.display = 'flex';
+    } else {
+        chatWindow.style.display = 'none';
+    }
 }
 
 // Respuestas Automáticas del Bot
 function sendQuickReply(question) {
     const msgContainer = document.getElementById('chatbot-messages');
+    if (!msgContainer) return;
 
     // 1. Mostrar mensaje del usuario
     const userMsg = document.createElement('div');
-    userMsg.className = 'chat-msg user';
+    userMsg.style.cssText = 'max-width: 85%; padding: 10px 14px; border-radius: 12px; font-size: 13px; line-height: 1.4; background-color: #722f37; color: #FFFFFF; align-self: flex-end;';
     userMsg.textContent = question;
     msgContainer.appendChild(userMsg);
 
@@ -198,10 +204,10 @@ function sendQuickReply(question) {
         botResponse = "Aceptamos transferencias bancarias, Mercado Pago y tarjetas de crédito/débito. 💳";
     } else if (question.includes('envíos') || question.includes('Envíos')) {
         botResponse = "Realizamos envíos a todo el país. En Córdoba Capital entregamos en 24/48hs. 🚚";
-    } else if (question.includes('Materiales')) {
+    } else if (question.includes('Materiales') || question.includes('velas')) {
         botResponse = "Todas nuestras velas están hechas con 100% cera de soja vegetal biodegradable y pabilo de algodón. 🌿";
-    } else if (question.includes('Asesor')) {
-        botResponse = "¡Te derivamos con un asesor! Hacé clic abajo para abrir WhatsApp:";
+    } else if (question.includes('Asesor') || question.includes('asesor')) {
+        botResponse = "¡Te derivamos con un asesor! Te abrimos el canal directo de WhatsApp...";
         setTimeout(() => {
             window.open('https://wa.me/5492966764069?text=Hola,%20quisiera%20hacer%20una%20consulta', '_blank');
         }, 1200);
@@ -212,7 +218,7 @@ function sendQuickReply(question) {
     // 3. Mostrar respuesta del bot con retraso suave
     setTimeout(() => {
         const botMsg = document.createElement('div');
-        botMsg.className = 'chat-msg bot';
+        botMsg.style.cssText = 'max-width: 85%; padding: 10px 14px; border-radius: 12px; font-size: 13px; line-height: 1.4; background-color: #FFFFFF; color: #2C2C2C; align-self: flex-start; border: 1px solid #E2D9CF;';
         botMsg.textContent = botResponse;
         msgContainer.appendChild(botMsg);
         msgContainer.scrollTop = msgContainer.scrollHeight;
