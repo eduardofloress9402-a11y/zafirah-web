@@ -1349,10 +1349,32 @@
         </div>
     </footer>
 
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/5493510000000" target="_blank" class="btn-whatsapp-float" title="Contactar por WhatsApp">
-        💬
-    </a>
+    <!-- Botón Flotante del Chatbot -->
+<button id="chatbot-toggle-btn" class="chatbot-toggle" onclick="toggleChatbot()">
+    💬
+</button>
+
+<!-- Ventana Flotante del Chatbot -->
+<div id="chatbot-window" class="chatbot-container hidden">
+    <div class="chatbot-header">
+        <div class="chatbot-title">
+            <span class="status-dot"></span>
+            <span>Asistente Zafirah</span>
+        </div>
+        <button class="chatbot-close-btn" onclick="toggleChatbot()">✕</button>
+    </div>
+    <div id="chatbot-messages" class="chatbot-messages">
+        <div class="chat-msg bot">
+            ¡Hola! 👋 Bienvenido/a a Zafirah. ¿En qué te puedo ayudar hoy?
+        </div>
+    </div>
+    <div class="chatbot-options">
+        <button onclick="sendQuickReply('¿Cuáles son los medios de pago?')">💳 Medios de pago</button>
+        <button onclick="sendQuickReply('¿Hacen envíos?')">🚚 Envíos</button>
+        <button onclick="sendQuickReply('¿De qué son las velas?')">🕯️ Materiales</button>
+        <button onclick="sendQuickReply('Hablar con un asesor')">📲 Hablar con Asesor</button>
+    </div>
+</div>
 <!-- Modal de Información de Producto -->
 <div id="productModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; justify-content: center; align-items: center;">
     <div style="background: #fff; padding: 30px; border-radius: 12px; max-width: 500px; width: 90%; position: relative; box-shadow: 0 5px 15px rgba(0,0,0,0.3); text-align: left;">
