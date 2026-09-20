@@ -804,9 +804,26 @@
             <a href="#cera">Cera de Soja</a>
             <a href="#contacto">Contacto</a>
         </nav>
-        <div id="cart-btn" class="cart-icon-btn" style="cursor: pointer;">
+        <div id="cart-btn" class="cart-icon-btn" style="cursor: pointer; position: relative;">
     🛒
     <span id="cart-count" class="cart-count">0</span>
+
+    <!-- Desplegable del carrito -->
+    <div id="cart-dropdown" class="cart-dropdown" style="display: none; position: absolute; top: 120%; right: 0; width: 320px; background: #ffffff; box-shadow: 0 10px 25px rgba(0,0,0,0.15); border-radius: 12px; padding: 16px; z-index: 1000; font-family: sans-serif; text-align: left;">
+        <h4 style="margin: 0 0 12px 0; font-size: 16px; border-bottom: 1px solid #eee; padding-bottom: 8px; color: #333;">🛒 Tu Carrito</h4>
+        <div id="cart-items" style="max-height: 240px; overflow-y: auto;">
+            <p style="margin: 0; font-size: 13px; color: #777; text-align: center; padding: 20px 0;">Tu carrito está vacío.</p>
+        </div>
+        <div style="border-top: 1px solid #eee; margin-top: 12px; padding-top: 12px;">
+            <div style="display: flex; justify-content: space-between; font-weight: bold; margin-bottom: 12px; font-size: 15px; color: #222;">
+                <span>Total:</span>
+                <span id="cart-total-price">$0</span>
+            </div>
+            <button id="btn-whatsapp" onclick="sendToWhatsApp()" style="width: 100%; background: #25D366; color: white; border: none; padding: 10px; border-radius: 8px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 14px;">
+                Enviar pedido por WhatsApp
+            </button>
+        </div>
+    </div>
 </div>
     </header>
 
