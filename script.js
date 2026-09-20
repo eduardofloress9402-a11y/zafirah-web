@@ -1,76 +1,142 @@
-// Variable global para guardar la lista de productos y el total acumulado
-let cart = [];
+window.cart = [];
 
-document.addEventListener('DOMContentLoaded', () => {
-    const cartCountElement = document.getElementById('cart-count');
-    const cartButton = document.getElementById('cart-btn');
+// Función para actualizar el contador y la lista dentro del desplegable
+window.updateCartUI = function() {
+    const totalItems = window.cart.reduce((sum, item) => sum + item.quantity, 0);
+    const totalPrice = window.cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
 
-    // Función para actualizar el contador visual y calcular totales
-    window.updateCart = function() {
-        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-        const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-
-        if (cartCountElement) {
-            cartCountElement.textContent = totalItems;
-            
-            // Efecto sutil de animación al agregar
-            cartCountElement.style.transform = 'scale(1.3)';
-            setTimeout(() => {
-                cartCountElement.style.transform = 'scale(1)';
-            }, 200);
-        }
-
-        return { totalItems, totalPrice };
-    };
-
-    // Función global para añadir ítems al carrito con su precio
-    window.addToCart = function(name, price, imageSrc) {
-        const existingItem = cart.find(item => item.name === name);
-
-        if (existingItem) {
-            existingItem.quantity += 1;
-        } else {
-            cart.push({
-                name: name,
-                price: price,
-                image: imageSrc,
-                quantity: 1
-            });
-        }
-
-        updateCart();
-        alert(`¡"${name}" ($${price.toLocaleString('es-AR')}) se agregó al carrito!`);
-    };
-
-    // Listener para los botones de las promos (agrega el paquete completo)
-    const promoButtons = document.querySelectorAll('.add-promo-btn');
-    promoButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            addToCart('Promo 6 Jabones', 25000, 'img/arcillaycoco.png');
-        });
+    // Actualizar el número rojo en el header
+    const badges = document.querySelectorAll('#cart-count, .cart-count, .cart-badge');
+    badges.forEach(badge => {
+        badge.textContent = totalItems;
+        badge.style.transform = 'scale(1.3)';
+        setTimeout(() => { badge.style.transform = 'scale(1)'; }, 200);
     });
 
-    // Evento al hacer clic en el ícono del carrito para ver el desglose y el total
-    if (cartButton) {
-        cartButton.addEventListener('click', () => {
-            const { totalItems, totalPrice } = updateCart();
+    // Actualizar el contenido de la cajita desplegable
+    const cartItemsContainer = document.getElementById('cart-items');
+    const cartTotalElement = document.getElementById('cart-total-price');
 
-            if (totalItems === 0) {
-                alert('Tu carrito está vacío actualmente.');
-            } else {
-                let resumen = '🛒 TU CARRITO DE COMPRAS:\n\n';
-                cart.forEach(item => {
-                    resumen += `• ${item.name} x${item.quantity} - $${(item.price * item.quantity).toLocaleString('es-AR')}\n`;
-                });
-                resumen += `\nTOTAL ACUMULADO: $${totalPrice.toLocaleString('es-AR')}`;
+    if (cartTotalElement) {
+        cartTotalElement.textContent = `$${totalPrice.toLocaleString('es-AR')}`;
+    }
 
-                alert(resumen);
+    if (cartItemsContainer) {
+        if (window.cart.length === 0) {
+            cartItemsContainer.innerHTML = '<p style="margin: 0; font-size: 13px; color: #777; text-align: center; padding: 20px 0;">Tu carrito está vacío.</p>';
+        } else {
+            cartItemsContainer.innerHTML = window.cart.map((item, index) => `
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid #f0f0f0;">
+                    <img src="${item.image}" alt="${item.name}" style="width: 40px; height: 40px; object-fit: contain; border-radius: 6px; background: #fafafa;">
+                    <div style="flex: 1; margin: 0 10px;">
+                        <div style="font-size: 13px; font-weight: bold; color: #333;">${item.name}</div>
+                        <div style="font-size: 12px; color: #666;">$${(item.price * item.quantity).toLocaleString('es-AR')}</div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 6px;">
+                        <button onclick="changeQuantity(${index}, -1)" style="border: 1px solid #ddd; background: #fff; width: 22px; height: 22px; border-radius: 4px; cursor: pointer; font-weight: bold;">-</button>
+                        <span style="font-size: 13px; font-weight: bold;">${item.quantity}</span>
+                        <button onclick="changeQuantity(${index}, 1)" style="border: 1px solid #ddd; background: #fff; width: 22px; height: 22px; border-radius: 4px; cursor: pointer; font-weight: bold;">+</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+    }
+
+    return { totalItems, totalPrice };
+};
+
+// Modificar cantidades (+ / -)
+window.changeQuantity = function(index, delta) {
+    window.cart[index].quantity += delta;
+    if (window.cart[index].quantity <= 0) {
+        window.cart.splice(index, 1);
+    }
+    window.updateCartUI();
+};
+
+// Notificación flotante elegante (Toast) al agregar producto
+function showToast(message) {
+    let toast = document.getElementById('cart-toast');
+    if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'cart-toast';
+        toast.style.cssText = 'position: fixed; bottom: 20px; right: 20px; background: #333; color: #fff; padding: 12px 20px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); font-size: 14px; z-index: 9999; transition: opacity 0.3s ease; opacity: 0;';
+        document.body.appendChild(toast);
+    }
+    toast.textContent = message;
+    toast.style.opacity = '1';
+    setTimeout(() => { toast.style.opacity = '0'; }, 2000);
+}
+
+// Función para agregar producto al carrito
+window.addToCart = function(name, price, imageSrc) {
+    const existingItem = window.cart.find(item => item.name === name);
+
+    if (existingItem) {
+        existingItem.quantity += 1;
+    } else {
+        window.cart.push({
+            name: name,
+            price: Number(price),
+            image: imageSrc,
+            quantity: 1
+        });
+    }
+
+    window.updateCartUI();
+    showToast(`✓ Agregaste "${name}" al carrito`);
+};
+
+// Enviar el pedido listo por WhatsApp
+window.sendToWhatsApp = function() {
+    if (window.cart.length === 0) {
+        showToast('El carrito está vacío.');
+        return;
+    }
+
+    let mensaje = 'Hola! Quisiera realizar el siguiente pedido en Zafirah:\n\n';
+    let total = 0;
+
+    window.cart.forEach(item => {
+        const subtotal = item.price * item.quantity;
+        total += subtotal;
+        mensaje += `• ${item.name} x${item.quantity} - $${subtotal.toLocaleString('es-AR')}\n`;
+    });
+
+    mensaje += `\n*TOTAL: $${total.toLocaleString('es-AR')}*`;
+
+    // Reemplazar con el número de teléfono del negocio si tenés uno asignado
+    const numero = '5493510000000'; 
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+    window.open(url, '_blank');
+};
+
+// Manejo del desplegable y clicks afuera
+document.addEventListener('DOMContentLoaded', () => {
+    window.updateCartUI();
+
+    const cartBtn = document.getElementById('cart-btn');
+    const cartDropdown = document.getElementById('cart-dropdown');
+
+    if (cartBtn && cartDropdown) {
+        cartBtn.addEventListener('click', (e) => {
+            // Evitar cerrar si se hace clic dentro del propio desplegable
+            if (e.target.closest('#cart-dropdown')) return;
+
+            const isVisible = cartDropdown.style.display === 'block';
+            cartDropdown.style.display = isVisible ? 'none' : 'block';
+        });
+
+        // Cerrar desplegable si hace clic fuera
+        document.addEventListener('click', (e) => {
+            if (!cartBtn.contains(e.target)) {
+                cartDropdown.style.display = 'none';
             }
         });
     }
 });
 
-// --- Funciones para el Modal de Información de Productos ---
+// --- Modal de Productos ---
 function openProductModal(name, desc, img, tag, fullInfo) {
     const modal = document.getElementById('productModal');
     const modalBody = document.getElementById('modalBodyContent');
@@ -93,9 +159,12 @@ function closeProductModal() {
     if (modal) modal.style.display = 'none';
 }
 
-// Cerrar el modal si hacen clic fuera de la cajita blanca
 window.onclick = function(event) {
     const modal = document.getElementById('productModal');
+    if (event && event.target === modal) {
+        modal.style.display = 'none';
+    }
+};
     if (event && event.target === modal) {
         modal.style.display = 'none';
     }
