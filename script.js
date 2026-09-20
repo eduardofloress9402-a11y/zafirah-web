@@ -175,3 +175,48 @@ window.onclick = function(event) {
         modal.style.display = 'none';
     }
 };
+// Abrir / Cerrar Chatbot
+function toggleChatbot() {
+    const chatWindow = document.getElementById('chatbot-window');
+    chatWindow.classList.toggle('hidden');
+}
+
+// Respuestas Automáticas del Bot
+function sendQuickReply(question) {
+    const msgContainer = document.getElementById('chatbot-messages');
+
+    // 1. Mostrar mensaje del usuario
+    const userMsg = document.createElement('div');
+    userMsg.className = 'chat-msg user';
+    userMsg.textContent = question;
+    msgContainer.appendChild(userMsg);
+
+    // 2. Determinar respuesta del bot
+    let botResponse = "";
+
+    if (question.includes('pago')) {
+        botResponse = "Aceptamos transferencias bancarias, Mercado Pago y tarjetas de crédito/débito. 💳";
+    } else if (question.includes('envíos') || question.includes('Envíos')) {
+        botResponse = "Realizamos envíos a todo el país. En Córdoba Capital entregamos en 24/48hs. 🚚";
+    } else if (question.includes('Materiales')) {
+        botResponse = "Todas nuestras velas están hechas con 100% cera de soja vegetal biodegradable y pabilo de algodón. 🌿";
+    } else if (question.includes('Asesor')) {
+        botResponse = "¡Te derivamos con un asesor! Hacé clic abajo para abrir WhatsApp:";
+        setTimeout(() => {
+            window.open('https://wa.me/5492966764069?text=Hola,%20quisiera%20hacer%20una%20consulta', '_blank');
+        }, 1200);
+    } else {
+        botResponse = "Gracias por tu consulta. Si querés una atención personalizada, podés presionar 'Hablar con Asesor'.";
+    }
+
+    // 3. Mostrar respuesta del bot con retraso suave
+    setTimeout(() => {
+        const botMsg = document.createElement('div');
+        botMsg.className = 'chat-msg bot';
+        botMsg.textContent = botResponse;
+        msgContainer.appendChild(botMsg);
+        msgContainer.scrollTop = msgContainer.scrollHeight;
+    }, 600);
+
+    msgContainer.scrollTop = msgContainer.scrollHeight;
+}
