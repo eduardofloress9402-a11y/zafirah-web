@@ -1349,30 +1349,30 @@
         </div>
     </footer>
 
-    <!-- Botón Flotante del Chatbot -->
-<button id="chatbot-toggle-btn" class="chatbot-toggle" onclick="toggleChatbot()">
+<!-- Botón Flotante del Chatbot -->
+<button id="chatbot-toggle-btn" onclick="toggleChatbot()" style="position: fixed; bottom: 24px; right: 24px; background-color: #25D366; color: #FFFFFF; width: 56px; height: 56px; border-radius: 50%; border: none; font-size: 26px; cursor: pointer; box-shadow: 0 4px 16px rgba(0,0,0,0.2); z-index: 9999; display: flex; align-items: center; justify-content: center;">
     💬
 </button>
 
 <!-- Ventana Flotante del Chatbot -->
-<div id="chatbot-window" class="chatbot-container hidden">
-    <div class="chatbot-header">
-        <div class="chatbot-title">
-            <span class="status-dot"></span>
+<div id="chatbot-window" class="hidden" style="position: fixed; bottom: 90px; right: 24px; width: 320px; height: 420px; background: #FFFFFF; border: 1px solid #E2D9CF; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); z-index: 9999; display: none; flex-direction: column; overflow: hidden; font-family: sans-serif;">
+    <div style="background-color: #722f37; color: #FFFFFF; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; font-weight: 600; font-size: 14px;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="width: 8px; height: 8px; background-color: #25D366; border-radius: 50%;"></span>
             <span>Asistente Zafirah</span>
         </div>
-        <button class="chatbot-close-btn" onclick="toggleChatbot()">✕</button>
+        <button onclick="toggleChatbot()" style="background: none; border: none; color: #FFFFFF; font-size: 16px; cursor: pointer;">✕</button>
     </div>
-    <div id="chatbot-messages" class="chatbot-messages">
-        <div class="chat-msg bot">
+    <div id="chatbot-messages" style="flex: 1; padding: 14px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; background-color: #FAF8F5;">
+        <div style="max-width: 85%; padding: 10px 14px; border-radius: 12px; font-size: 13px; line-height: 1.4; background-color: #FFFFFF; color: #2C2C2C; align-self: flex-start; border: 1px solid #E2D9CF;">
             ¡Hola! 👋 Bienvenido/a a Zafirah. ¿En qué te puedo ayudar hoy?
         </div>
     </div>
-    <div class="chatbot-options">
-        <button onclick="sendQuickReply('¿Cuáles son los medios de pago?')">💳 Medios de pago</button>
-        <button onclick="sendQuickReply('¿Hacen envíos?')">🚚 Envíos</button>
-        <button onclick="sendQuickReply('¿De qué son las velas?')">🕯️ Materiales</button>
-        <button onclick="sendQuickReply('Hablar con un asesor')">📲 Hablar con Asesor</button>
+    <div style="padding: 10px; background: #FFFFFF; border-top: 1px solid #E2D9CF; display: flex; flex-wrap: wrap; gap: 6px;">
+        <button onclick="sendQuickReply('¿Cuáles son los medios de pago?')" style="background: #F4E8EA; border: 1px solid #E2D9CF; color: #722f37; padding: 6px 10px; border-radius: 14px; font-size: 11px; font-weight: 600; cursor: pointer;">💳 Medios de pago</button>
+        <button onclick="sendQuickReply('¿Hacen envíos?')" style="background: #F4E8EA; border: 1px solid #E2D9CF; color: #722f37; padding: 6px 10px; border-radius: 14px; font-size: 11px; font-weight: 600; cursor: pointer;">🚚 Envíos</button>
+        <button onclick="sendQuickReply('¿De qué son las velas?')" style="background: #F4E8EA; border: 1px solid #E2D9CF; color: #722f37; padding: 6px 10px; border-radius: 14px; font-size: 11px; font-weight: 600; cursor: pointer;">🕯️ Materiales</button>
+        <button onclick="sendQuickReply('Hablar con un asesor')" style="background: #F4E8EA; border: 1px solid #E2D9CF; color: #722f37; padding: 6px 10px; border-radius: 14px; font-size: 11px; font-weight: 600; cursor: pointer;">📲 Hablar con Asesor</button>
     </div>
 </div>
 <!-- Modal de Información de Producto -->
