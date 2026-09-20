@@ -209,7 +209,7 @@ function sendQuickReply(question) {
     } else if (question.includes('Asesor') || question.includes('asesor')) {
         botResponse = "¡Te derivamos con un asesor! Te abrimos el canal directo de WhatsApp...";
         setTimeout(() => {
-            window.open('https://wa.me/5492966764069?text=Hola,%20quisiera%20hacer%20una%20consulta', '_blank');
+            window.open('https://wa.me/543516646856?text=Hola,%20quisiera%20hacer%20una%20consulta', '_blank');
         }, 1200);
     } else {
         botResponse = "Gracias por tu consulta. Si querés una atención personalizada, podés presionar 'Hablar con Asesor'.";
