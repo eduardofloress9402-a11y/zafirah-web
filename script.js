@@ -1,54 +1,70 @@
+// Variable global para guardar la lista de productos y el total acumulado
+let cart = [];
+
 document.addEventListener('DOMContentLoaded', () => {
-    let cartCount = 0;
     const cartCountElement = document.getElementById('cart-count');
     const cartButton = document.getElementById('cart-btn');
 
-    // Función para actualizar el contador visual del carrito
-    function updateCart(amount = 1) {
-        cartCount += amount;
+    // Función para actualizar el contador visual y calcular totales
+    window.updateCart = function() {
+        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+        const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
         if (cartCountElement) {
-            cartCountElement.textContent = cartCount;
+            cartCountElement.textContent = totalItems;
+            
             // Efecto sutil de animación al agregar
             cartCountElement.style.transform = 'scale(1.3)';
             setTimeout(() => {
                 cartCountElement.style.transform = 'scale(1)';
             }, 200);
         }
-    }
 
-    // Listener para todos los botones de "Agregar al Carrito"
-    const addCartButtons = document.querySelectorAll('.btn-add-cart:not(.add-promo-btn)');
-    addCartButtons.forEach(button => {
-        button.addEventListener('click', (e) => {
-            const productCard = e.target.closest('.product-card, .vela-card');
-            let productName = 'Producto';
-            
-            if (productCard) {
-                const nameEl = productCard.querySelector('.product-name, .vela-title');
-                if (nameEl) productName = nameEl.textContent.trim();
-            }
+        return { totalItems, totalPrice };
+    };
 
-            updateCart(1);
-            alert(`¡"${productName}" se agregó al carrito!`);
-        });
-    });
+    // Función global para añadir ítems al carrito con su precio
+    window.addToCart = function(name, price, imageSrc) {
+        const existingItem = cart.find(item => item.name === name);
 
-    // Listener especial para botones de promociones
+        if (existingItem) {
+            existingItem.quantity += 1;
+        } else {
+            cart.push({
+                name: name,
+                price: price,
+                image: imageSrc,
+                quantity: 1
+            });
+        }
+
+        updateCart();
+        alert(`¡"${name}" ($${price.toLocaleString('es-AR')}) se agregó al carrito!`);
+    };
+
+    // Listener para los botones de las promos (agrega el paquete completo)
     const promoButtons = document.querySelectorAll('.add-promo-btn');
     promoButtons.forEach(button => {
         button.addEventListener('click', () => {
-            updateCart(6); // Agrega los 6 jabones de la promo al contador
-            alert('¡Promo de 6 Jabones ($25.000) agregada al carrito!');
+            addToCart('Promo 6 Jabones', 25000, 'img/arcillaycoco.png');
         });
     });
 
-    // Evento al hacer clic en el ícono del carrito
+    // Evento al hacer clic en el ícono del carrito para ver el desglose y el total
     if (cartButton) {
         cartButton.addEventListener('click', () => {
-            if (cartCount === 0) {
+            const { totalItems, totalPrice } = updateCart();
+
+            if (totalItems === 0) {
                 alert('Tu carrito está vacío actualmente.');
             } else {
-                alert(`Tenés ${cartCount} producto(s) en tu carrito.`);
+                let resumen = '🛒 TU CARRITO DE COMPRAS:\n\n';
+                cart.forEach(item => {
+                    resumen += `• ${item.name} x${item.quantity} - $${(item.price * item.quantity).toLocaleString('es-AR')}\n`;
+                });
+                resumen += `\nTOTAL ACUMULADO: $${totalPrice.toLocaleString('es-AR')}`;
+
+                alert(resumen);
             }
         });
     }
@@ -58,9 +74,10 @@ document.addEventListener('DOMContentLoaded', () => {
 function openProductModal(name, desc, img, tag, fullInfo) {
     const modal = document.getElementById('productModal');
     const modalBody = document.getElementById('modalBodyContent');
+    if (!modal || !modalBody) return;
     
     modalBody.innerHTML = `
-       <img src="${img}" alt="${name}" style="width: 100%; max-height: 280px; object-fit: contain; border-radius: 8px; margin-bottom: 15px; background: #faf9f6;">
+        <img src="${img}" alt="${name}" style="width: 100%; max-height: 280px; object-fit: contain; border-radius: 8px; margin-bottom: 15px; background: #faf9f6;">
         <span style="background: #E8F5E9; color: #2E7D32; padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: bold; text-transform: uppercase;">${tag}</span>
         <h2 style="margin: 10px 0; color: #333; font-size: 24px;">${name}</h2>
         <p style="color: #666; font-size: 14px; margin-bottom: 10px;"><strong>Efecto:</strong> ${desc}</p>
@@ -73,13 +90,13 @@ function openProductModal(name, desc, img, tag, fullInfo) {
 
 function closeProductModal() {
     const modal = document.getElementById('productModal');
-    modal.style.display = 'none';
+    if (modal) modal.style.display = 'none';
 }
 
 // Cerrar el modal si hacen clic fuera de la cajita blanca
 window.onclick = function(event) {
     const modal = document.getElementById('productModal');
-    if (event.target === modal) {
+    if (event && event.target === modal) {
         modal.style.display = 'none';
     }
 }
