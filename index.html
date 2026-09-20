@@ -849,117 +849,89 @@
         </section>
 
         <!-- Section: Jabones -->
-        <section id="jabones">
-            <div class="section-header">
-                <div class="section-tag">LÍNEA DE COSMÉTICA BOTÁNICA</div>
-                <h2 class="section-title">Naturaleza que cuida tu piel</h2>
-                <p class="section-sub">Especialmente formulados para limpiar suavemente sin resecar la piel.</p>
+    <section id="jabones">
+        <div class="section-header">
+            <div class="section-tag">LÍNEA DE COSMÉTICA BOTÁNICA</div>
+            <h2 class="section-title">Naturaleza que cuida tu piel</h2>
+            <p class="section-sub">Especialmente formulados para limpiar suavemente sin resecar la piel.</p>
+        </div>
+
+        <div class="products-grid">
+
+            <!-- 1. Arcilla Rosa y Coco -->
+            <div class="product-card">
+                <div class="product-img-box" style="cursor: pointer;" onclick="openProductModal('Arcilla Rosa y Coco', 'Suavidad y renovación para pieles delicadas.', 'img/arcillaycoco.png', 'Arcilla Rosa, Aceite de Coco, Manteca de Karité.', 'Ideal para limpieza facial y corporal suave.')">
+                    <img src="img/arcillaycoco.png" alt="Arcilla Rosa y Coco" onerror="this.src='img/arcillaycoco.png'">
+                </div>
+                <h3>Arcilla Rosa y Coco</h3>
+                <button class="btn-detalles" onclick="openProductModal('Arcilla Rosa y Coco', 'Suavidad y renovación para pieles delicadas.', 'img/arcillaycoco.png', 'Arcilla Rosa, Aceite de Coco, Manteca de Karité.', 'Ideal para limpieza facial y corporal suave.')">Ver Detalles</button>
             </div>
 
-           <div class="products-grid">
-
-                <!-- 1. Coco y Carbón -->
-                <div class="product-card">
-                    <div class="product-img-box" style="cursor: pointer;" onclick="openProductModal('Coco y Carbón Activado', 'Desintoxicante y purificante profundo', 'img/cococarbon.jpeg', 'DETOX', '🌱 FRAGANCIA: Notas frescas y purificantes con un toque herbal.<br><br>✨ PROPIEDADES:<br>• Especialmente formulado para limpiar impurezas profundas.<br>• Absorbe toxinas y regula el exceso de grasa.<br>• Deja la piel equilibrada, limpia y renovada.')">
-                        <img src="img/cococarbon.jpeg" alt="Coco y Carbón Activado" onerror="this.src='img/cococarbon.png'">
-                    </div>
-                    <span class="p-tag" style="background:#E8F5E9; color:#2E7D32;">DETOX</span>
-                    <h3 class="product-name">Coco y Carbón Activado</h3>
-                    <p class="product-desc">Desintoxicante y purificante profundo</p>
-                    <button class="btn-add-cart" onclick="alert('Agregado al carrito')">+ Agregar al Carrito</button>
+            <!-- 2. Arroz y Cítricos -->
+            <div class="product-card">
+                <div class="product-img-box" style="cursor: pointer;" onclick="openProductModal('Arroz y Cítricos', 'Efecto iluminador y exfoliante muy suave.', 'img/arrozcoco.png', 'Extracto de Arroz, Aceite de Coco, Esencia Cítrica.', 'Ideal para unificar el tono de la piel.')">
+                    <img src="img/arrozcoco.png" alt="Arroz y Cítricos" onerror="this.src='img/arrozcoco.png'">
                 </div>
-
-                <!-- 2. Avena y Miel -->
-                <div class="product-card">
-                    <div class="product-img-box" style="cursor: pointer;" onclick="openProductModal('Avena y Miel', 'Exfoliación suave e hidratación nutritiva', 'img/avenaymiel.jpeg', 'NUTRITIVO', '🌾 FRAGANCIA: Delicadas notas dulces y reconfortantes.<br><br>✨ PROPIEDADES:<br>• Ideal para pieles delicadas y sensibles.<br>• La avena realiza una suave exfoliación natural.<br>• La miel aporta nutrición profunda, vitaminas y retiene la humedad.')">
-                        <img src="img/avenaymiel.jpeg" alt="Avena y Miel" onerror="this.src='img/avenaymiel.png'">
-                    </div>
-                    <span class="p-tag" style="background:#FFF8E1; color:#F57F17;">NUTRITIVO</span>
-                    <h3 class="product-name">Avena y Miel</h3>
-                    <p class="product-desc">Exfoliación suave e hidratación nutritiva</p>
-                    <button class="btn-add-cart" onclick="alert('Agregado al carrito')">+ Agregar al Carrito</button>
-                </div>
-
-                <!-- 3. Arcilla Rosa -->
-                <div class="product-card">
-                    <div class="product-img-box" style="cursor: pointer;" onclick="openProductModal('Arcilla Rosa y Coco', 'Especial piel sensible y suavidad', 'img/arcillarosaycoco.jpeg', 'SUAVE', '🌸 FRAGANCIA: Notas suaves y delicadas con un toque tropical de coco.<br><br>✨ PROPIEDADES:<br>• Combinación suavizante y descongestionante.<br>• Aporta minerales esenciales y cuida las pieles más sensibles sin irritar.<br>• Contribuye a una apariencia más luminosa y una sensación única de suavidad y confort.')">
-                        <img src="img/arcillarosaycoco.jpeg" alt="Arcilla Rosa y Coco" onerror="this.src='img/arcillarosaycoco.png'">
-                    </div>
-                    <span class="p-tag" style="background:#FCE4EC; color:#C2185B;">SUAVE</span>
-                    <h3 class="product-name">Arcilla Rosa y Coco</h3>
-                    <p class="product-desc">Especial piel sensible y suavidad</p>
-                    <button class="btn-add-cart" onclick="alert('Agregado al carrito')">+ Agregar al Carrito</button>
-                </div>
-
-                <!-- 4. Avena Café y Miel -->
-                <div class="product-card">
-                    <div class="product-img-box" style="cursor: pointer;" onclick="openProductModal('Avena, Café y Miel', 'Exfoliante corporal estimulante', 'img/avencafeymiel.jpeg', 'EXFOLIANTE', '☕ FRAGANCIA: Intensa y energizante a café tostado.<br><br>✨ PROPIEDADES:<br>• Potente efecto exfoliante, estimulante y circulatorio.<br>• Los granos de café ayudan a revitalizar la piel.<br>• Deja el cuerpo sumamente suave, limpio y renovado.')">
-                        <img src="img/avencafeymiel.jpeg" alt="Avena, Café y Miel" onerror="this.src='img/avencafeymiel.png'">
-                    </div>
-                    <span class="p-tag" style="background:#EFEBE9; color:#4E342E;">EXFOLIANTE</span>
-                    <h3 class="product-name">Avena, Café y Miel</h3>
-                    <p class="product-desc">Exfoliante corporal estimulante</p>
-                    <button class="btn-add-cart" onclick="alert('Agregado al carrito')">+ Agregar al Carrito</button>
-                </div>
-
-                <!-- 5. Romero y Ruda -->
-                <div class="product-card">
-                    <div class="product-img-box" style="cursor: pointer;" onclick="openProductModal('Romero y Ruda', 'Energizante y renovador cutáneo', 'img/rudayromero.jpeg', 'ENERGÍA', '🌿 FRAGANCIA: Herbal fresca, vigorizante y pura.<br><br>✨ PROPIEDADES:<br>• Hierbas botánicas seleccionadas con propiedades purificadoras.<br>• Brinda una sensación revitalizante y de frescura profunda.<br>• Ideal para energizar la rutina diaria de baño.')">
-                        <img src="img/rudayromero.jpeg" alt="Romero y Ruda" onerror="this.src='img/rudayromero.png'">
-                    </div>
-                    <span class="p-tag" style="background:#E8F5E9; color:#1B5E20;">ENERGÍA</span>
-                    <h3 class="product-name">Romero y Ruda</h3>
-                    <p class="product-desc">Energizante y renovador cutáneo</p>
-                    <button class="btn-add-cart" onclick="alert('Agregado al carrito')">+ Agregar al Carrito</button>
-                </div>
-
-                <!-- 6. Manzanilla y Caléndula -->
-                <div class="product-card">
-                    <div class="product-img-box" style="cursor: pointer;" onclick="openProductModal('Manzanilla y Caléndula', 'Calmante natural para pieles delicadas', 'img/manzanillaycalendula.jpeg', 'CALMANTE', '🌼 FRAGANCIA: Suave, floral y relajante.<br><br>✨ PROPIEDADES:<br>• Extractos florales con alto poder descongestionante y regenerador.<br>• Calma rojeces, irritaciones y cuida las pieles más exigentes.<br>• Aporta suavidad y bienestar duradero.')">
-                        <img src="img/manzanillaycalendula.jpeg" alt="Manzanilla y Caléndula" onerror="this.src='img/manzanillaycalendula.png'">
-                    </div>
-                    <span class="p-tag" style="background:#FFF3E0; color:#E65100;">CALMANTE</span>
-                    <h3 class="product-name">Manzanilla y Caléndula</h3>
-                    <p class="product-desc">Calmante natural para pieles delicadas</p>
-                    <button class="btn-add-cart" onclick="alert('Agregado al carrito')">+ Agregar al Carrito</button>
-                </div>
-
-                <!-- 7. Arroz y Cítricos -->
-                <div class="product-card">
-                    <div class="product-img-box" style="cursor: pointer;" onclick="openProductModal('Arroz, Aceite de Coco y Cítricos', 'Aclarante suave y refrescante', 'img/arrozycitricos.jpeg', 'REFRESCANTE', '🍋 FRAGANCIA: Cítrica, vibrante y chispeante.<br><br>✨ PROPIEDADES:<br>• Aporta luminosidad y frescura natural a la piel.<br>• Combinación equilibrada de arroz con esencias cítricas y aceite de coco.<br>• Ayuda a unificar la textura y revitalizar el aspecto cutáneo.')">
-                        <img src="img/arrozycitricos.jpeg" alt="Arroz, Aceite de Coco y Cítricos" onerror="this.src='img/arrozycitricos.png'">
-                    </div>
-                    <span class="p-tag" style="background:#E0F7FA; color:#006064;">REFRESCANTE</span>
-                    <h3 class="product-name">Arroz, Aceite de Coco y Cítricos</h3>
-                    <p class="product-desc">Aclarante suave y refrescante</p>
-                    <button class="btn-add-cart" onclick="alert('Agregado al carrito')">+ Agregar al Carrito</button>
-                </div>
-
-                <!-- 8. Lavanda Serena -->
-                <div class="product-card">
-                    <div class="product-img-box" style="cursor: pointer;" onclick="openProductModal('Lavanda Serena', 'Propiedades relajantes para tu rutina diaria', 'img/lavandaserena.jpeg', 'RELAX', '💜 FRAGANCIA: Aromaterapia pura a lavanda relajante.<br><br>✨ PROPIEDADES:<br>• Infundido con aceites esenciales puros para regalarte un momento de relax.<br>• Ayuda a calmar la mente y desconectar del estrés diario.<br>• Deja la piel suave, nutrida y delicadamente perfumada.')">
-                        <img src="img/lavandaserena.jpeg" alt="Lavanda Serena" onerror="this.src='img/lavandaserena.png'">
-                    </div>
-                    <span class="p-tag" style="background:#EDE7F6; color:#512DA8;">RELAX</span>
-                    <h3 class="product-name">Lavanda Serena</h3>
-                    <p class="product-desc">Propiedades relajantes para tu rutina diaria</p>
-                    <button class="btn-add-cart" onclick="alert('Agregado al carrito')">+ Agregar al Carrito</button>
-                </div>
-
-                <!-- 9. Coco y Vainilla -->
-                <div class="product-card">
-                    <div class="product-img-box" style="cursor: pointer;" onclick="openProductModal('Coco y Vainilla (Infantil)', 'Fórmula suave para los más pequeños', 'img/cocoyvainilla.jpeg', 'INFANTIL', '🥥 FRAGANCIA: Dulce, tierna y cálida a vainilla y coco.<br><br>✨ PROPIEDADES:<br>• Hipoalergénico y de tolerancia extra suave.<br>• Desarrollado especialmente para cuidar y proteger la piel delicada de los niños.<br>• Limpia sin agredir manteniendo la hidratación natural.')">
-                        <img src="img/cocoyvainilla.jpeg" alt="Coco y Vainilla (Infantil)" onerror="this.src='img/cocoyvainilla.png'">
-                    </div>
-                    <span class="p-tag" style="background:#FFEBEE; color:#D32F2F;">INFANTIL</span>
-                    <h3 class="product-name">Coco y Vainilla (Infantil)</h3>
-                    <p class="product-desc">Fórmula suave para los más pequeños</p>
-                    <button class="btn-add-cart" onclick="alert('Agregado al carrito')">+ Agregar al Carrito</button>
-                </div>
-
+                <h3>Arroz y Cítricos</h3>
+                <button class="btn-detalles" onclick="openProductModal('Arroz y Cítricos', 'Efecto iluminador y exfoliante muy suave.', 'img/arrozcoco.png', 'Extracto de Arroz, Aceite de Coco, Esencia Cítrica.', 'Ideal para unificar el tono de la piel.')">Ver Detalles</button>
             </div>
-        </section>
 
+            <!-- 3. Avena, Café y Miel -->
+            <div class="product-card">
+                <div class="product-img-box" style="cursor: pointer;" onclick="openProductModal('Avena, Café y Miel', 'Exfoliación profunda y nutrición intensa.', 'img/avenacocoymiel.png', 'Avena coloidal, Granos de café, Miel pura.', 'Ideal para revitalizar y exfoliar el cuerpo.')">
+                    <img src="img/avenacocoymiel.png" alt="Avena, Café y Miel" onerror="this.src='img/avenacocoymiel.png'">
+                </div>
+                <h3>Avena, Café y Miel</h3>
+                <button class="btn-detalles" onclick="openProductModal('Avena, Café y Miel', 'Exfoliación profunda y nutrición intensa.', 'img/avenacocoymiel.png', 'Avena coloidal, Granos de café, Miel pura.', 'Ideal para revitalizar y exfoliar el cuerpo.')">Ver Detalles</button>
+            </div>
+
+            <!-- 4. Avena y Miel -->
+            <div class="product-card">
+                <div class="product-img-box" style="cursor: pointer;" onclick="openProductModal('Avena y Miel', 'Calma la piel irritada y aporta hidratación.', 'img/avenaymiel.png', 'Avena, Miel orgánica, Aceites vegetales.', 'Ideal para pieles sensibles y delicadas.')">
+                    <img src="img/avenaymiel.png" alt="Avena y Miel" onerror="this.src='img/avenaymiel.png'">
+                </div>
+                <h3>Avena y Miel</h3>
+                <button class="btn-detalles" onclick="openProductModal('Avena y Miel', 'Calma la piel irritada y aporta hidratación.', 'img/avenaymiel.png', 'Avena, Miel orgánica, Aceites vegetales.', 'Ideal para pieles sensibles y delicadas.')">Ver Detalles</button>
+            </div>
+
+            <!-- 5. Coco y Carbón Activado -->
+            <div class="product-card">
+                <div class="product-img-box" style="cursor: pointer;" onclick="openProductModal('Coco y Carbón Activado', 'Desintoxicación profunda y limpieza de impurezas.', 'img/cococarbon.png', 'Carbón activado, Aceite de coco puro.', 'Ideal para pieles mixtas a grasas.')">
+                    <img src="img/cococarbon.png" alt="Coco y Carbón Activado" onerror="this.src='img/cococarbon.png'">
+                </div>
+                <h3>Coco y Carbón Activado</h3>
+                <button class="btn-detalles" onclick="openProductModal('Coco y Carbón Activado', 'Desintoxicación profunda y limpieza de impurezas.', 'img/cococarbon.png', 'Carbón activado, Aceite de coco puro.', 'Ideal para pieles mixtas a grasas.')">Ver Detalles</button>
+            </div>
+
+            <!-- 6. Lavanda Serena -->
+            <div class="product-card">
+                <div class="product-img-box" style="cursor: pointer;" onclick="openProductModal('Lavanda Serena', 'Relajación y aromaterapia para el descanso.', 'img/lavanda.png', 'Aceite esencial de lavanda, Flores de lavanda.', 'Ideal para baños relajantes antes de dormir.')">
+                    <img src="img/lavanda.png" alt="Lavanda Serena" onerror="this.src='img/lavanda.png'">
+                </div>
+                <h3>Lavanda Serena</h3>
+                <button class="btn-detalles" onclick="openProductModal('Lavanda Serena', 'Relajación y aromaterapia para el descanso.', 'img/lavanda.png', 'Aceite esencial de lavanda, Flores de lavanda.', 'Ideal para baños relajantes antes de dormir.')">Ver Detalles</button>
+            </div>
+
+            <!-- 7. Manzanilla y Caléndula -->
+            <div class="product-card">
+                <div class="product-img-box" style="cursor: pointer;" onclick="openProductModal('Manzanilla y Caléndula', 'Efecto descongestivo, suave y cicatrizante.', 'img/manzanilla.png', 'Flores de manzanilla, Extracto de caléndula.', 'Ideal para pieles muy sensibles y bebes.')">
+                    <img src="img/manzanilla.png" alt="Manzanilla y Caléndula" onerror="this.src='img/manzanilla.png'">
+                </div>
+                <h3>Manzanilla y Caléndula</h3>
+                <button class="btn-detalles" onclick="openProductModal('Manzanilla y Caléndula', 'Efecto descongestivo, suave y cicatrizante.', 'img/manzanilla.png', 'Flores de manzanilla, Extracto de caléndula.', 'Ideal para pieles muy sensibles y bebes.')">Ver Detalles</button>
+            </div>
+
+            <!-- 8. Romero y Ruda -->
+            <div class="product-card">
+                <div class="product-img-box" style="cursor: pointer;" onclick="openProductModal('Romero y Ruda', 'Energizante, estimulante y purificante.', 'img/romero.png', 'Extracto de romero, Ruda, Aceites base.', 'Ideal para revitalizar el cuerpo en la ducha.')">
+                    <img src="img/romero.png" alt="Romero y Ruda" onerror="this.src='img/romero.png'">
+                </div>
+                <h3>Romero y Ruda</h3>
+                <button class="btn-detalles" onclick="openProductModal('Romero y Ruda', 'Energizante, estimulante y purificante.', 'img/romero.png', 'Extracto de romero, Ruda, Aceites base.', 'Ideal para revitalizar el cuerpo en la ducha.')">Ver Detalles</button>
+            </div>
+
+        </div>
+    </section>
         <!-- Banner Promocional -->
         <section class="wide-banner">
             <div>
