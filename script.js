@@ -60,7 +60,7 @@ function openProductModal(name, desc, img, tag, fullInfo) {
     const modalBody = document.getElementById('modalBodyContent');
     
     modalBody.innerHTML = `
-        <img src="${img}" alt="${name}" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;">
+       <img src="${img}" alt="${name}" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;">
         <span style="background: #E8F5E9; color: #2E7D32; padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: bold; text-transform: uppercase;">${tag}</span>
         <h2 style="margin: 10px 0; color: #333; font-size: 24px;">${name}</h2>
         <p style="color: #666; font-size: 14px; margin-bottom: 10px;"><strong>Efecto:</strong> ${desc}</p>
