@@ -1039,165 +1039,164 @@
     <h2 class="section-title">Velas Aromáticas de Cera de Soja</h2>
     <p class="section-subtitle" style="max-width: 600px; margin: 10px auto 30px auto; color: #666;">Velas vertidas a mano con cera de soja vegetal 100% biodegradable y pabilo de algodón puro.</p>
 
-    <!-- Grilla de productos con imágenes estilizadas -->
-    <div class="product-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto;">
+    <!-- Grilla limpia en 3 columnas -->
+    <div class="velas-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width: 1140px; margin: 0 auto;">
 
         <!-- 1. Café -->
-        <img src="img/cafe.png" alt="Vela Café Intenso" class="product-img" onclick="..." style="width: 100%; height: 100%; object-fit: cover; object-position: center 20%; cursor: pointer;">
-            <div style="width: 100%; height: 220px; border-radius: 8px; overflow: hidden; margin-bottom: 12px;">
-                <img src="img/cafe.png" alt="Vela Café Intenso" class="product-img" onclick="openProductModal('Vela Café Intenso', 'Energizante y estimulante', 'img/cafe.png', 'Aromaterapia', 'Aroma cálido a granos de café tostado. Ideal para mañanas de trabajo, enfoque y motivación.')" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+        <div class="product-card">
+            <div class="product-img-box">
+                <img src="img/cafe.png" alt="Vela Café Intenso" onclick="openProductModal('Vela Café Intenso', 'Energizante y estimulante', 'img/cafe.png', 'Aromaterapia', 'Aroma cálido a granos de café tostado. Ideal para mañanas de trabajo, enfoque y motivación.')">
             </div>
-            <div class="product-info" style="text-align: left;">
-                <span class="product-tag" style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #722f37; font-weight: bold;">Aromaterapia</span>
-                <h3 class="product-name" style="font-size: 18px; margin: 5px 0; color: #333;">Vela Café Intenso</h3>
-                <p class="product-desc" style="font-size: 13px; color: #777; margin-bottom: 10px;">Energizante y estimulante</p>
-                <div class="product-price" style="font-size: 18px; font-weight: bold; color: #333; margin-bottom: 12px;">$5.200</div>
-                <div class="product-actions" style="display: flex; gap: 8px;">
-                    <button type="button" onclick="openProductModal('Vela Café Intenso', 'Energizante y estimulante', 'img/cafe.png', 'Aromaterapia', 'Aroma cálido a granos de café tostado. Ideal para mañanas de trabajo, enfoque y motivación.')" style="flex: 1; padding: 9px; background: transparent; border: 1px solid #722f37; color: #722f37; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 12px;">Ver Más</button>
-                    <button type="button" onclick="addToCart('Vela Café Intenso', 5200, 'img/cafe.png')" style="flex: 2; padding: 9px; background: #722f37; border: none; color: white; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 12px;">+ Agregar al Carrito</button>
+            <div class="product-info">
+                <span class="p-tag tag-aromatico">Aromaterapia</span>
+                <h3 class="product-name">Vela Café Intenso</h3>
+                <p class="product-desc">Energizante y estimulante</p>
+                <div class="product-price" style="font-size: 16px; font-weight: 700; color: #2C2C2C; margin-bottom: 10px;">$5.200</div>
+                <div style="display: flex; gap: 8px;">
+                    <button class="btn-add-cart" type="button" onclick="openProductModal('Vela Café Intenso', 'Energizante y estimulante', 'img/cafe.png', 'Aromaterapia', 'Aroma cálido a granos de café tostado. Ideal para mañanas de trabajo, enfoque y motivación.')" style="flex: 1;">Ver Más</button>
+                    <button class="btn-add-cart" type="button" onclick="addToCart('Vela Café Intenso', 5200, 'img/cafe.png')" style="flex: 2; background-color: var(--maroon); color: #fff; border-color: var(--maroon);">+ Agregar al Carrito</button>
                 </div>
             </div>
         </div>
 
         <!-- 2. Canela -->
-        <div class="product-card" style="background: #fff; border-radius: 12px; border: 1px solid #eee; padding: 15px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.03); display: flex; flex-direction: column; justify-content: space-between;">
-            <div style="width: 100%; height: 220px; border-radius: 8px; overflow: hidden; margin-bottom: 12px;">
-                <img src="img/canela.png" alt="Vela Canela & Especias" class="product-img" onclick="openProductModal('Vela Canela & Especias', 'Calidez y abundancia', 'img/canela.png', 'Calidez', 'Aroma especiado dulce que reconforta el alma y promueve la atracción de energía positiva.')" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+        <div class="product-card">
+            <div class="product-img-box">
+                <img src="img/canela.png" alt="Vela Canela & Especias" onclick="openProductModal('Vela Canela & Especias', 'Calidez y abundancia', 'img/canela.png', 'Calidez', 'Aroma especiado dulce que reconforta el alma y promueve la atracción de energía positiva.')">
             </div>
-            <div class="product-info" style="text-align: left;">
-                <span class="product-tag" style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #722f37; font-weight: bold;">Calidez</span>
-                <h3 class="product-name" style="font-size: 18px; margin: 5px 0; color: #333;">Vela Canela & Especias</h3>
-                <p class="product-desc" style="font-size: 13px; color: #777; margin-bottom: 10px;">Calidez y abundancia</p>
-                <div class="product-price" style="font-size: 18px; font-weight: bold; color: #333; margin-bottom: 12px;">$5.200</div>
-                <div class="product-actions" style="display: flex; gap: 8px;">
-                    <button type="button" onclick="openProductModal('Vela Canela & Especias', 'Calidez y abundancia', 'img/canela.png', 'Calidez', 'Aroma especiado dulce que reconforta el alma y promueve la atracción de energía positiva.')" style="flex: 1; padding: 9px; background: transparent; border: 1px solid #722f37; color: #722f37; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 12px;">Ver Más</button>
-                    <button type="button" onclick="addToCart('Vela Canela & Especias', 5200, 'img/canela.png')" style="flex: 2; padding: 9px; background: #722f37; border: none; color: white; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 12px;">+ Agregar al Carrito</button>
+            <div class="product-info">
+                <span class="p-tag tag-calmante">Calidez</span>
+                <h3 class="product-name">Vela Canela & Especias</h3>
+                <p class="product-desc">Calidez y abundancia</p>
+                <div class="product-price" style="font-size: 16px; font-weight: 700; color: #2C2C2C; margin-bottom: 10px;">$5.200</div>
+                <div style="display: flex; gap: 8px;">
+                    <button class="btn-add-cart" type="button" onclick="openProductModal('Vela Canela & Especias', 'Calidez y abundancia', 'img/canela.png', 'Calidez', 'Aroma especiado dulce que reconforta el alma y promueve la atracción de energía positiva.')" style="flex: 1;">Ver Más</button>
+                    <button class="btn-add-cart" type="button" onclick="addToCart('Vela Canela & Especias', 5200, 'img/canela.png')" style="flex: 2; background-color: var(--maroon); color: #fff; border-color: var(--maroon);">+ Agregar al Carrito</button>
                 </div>
             </div>
         </div>
 
         <!-- 3. Coco -->
-        <div class="product-card" style="background: #fff; border-radius: 12px; border: 1px solid #eee; padding: 15px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.03); display: flex; flex-direction: column; justify-content: space-between;">
-            <div style="width: 100%; height: 220px; border-radius: 8px; overflow: hidden; margin-bottom: 12px;">
-                <img src="img/coco.png" alt="Vela Coco Tropical" class="product-img" onclick="openProductModal('Vela Coco Tropical', 'Dulzor y relajación', 'img/coco.png', 'Relax', 'Fragancia cremosa y envolvente de coco natural que transporta a días de calma y sol.')" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+        <div class="product-card">
+            <div class="product-img-box">
+                <img src="img/coco.png" alt="Vela Coco Tropical" onclick="openProductModal('Vela Coco Tropical', 'Dulzor y relajación', 'img/coco.png', 'Relax', 'Fragancia cremosa y envolvente de coco natural que transporta a días de calma y sol.')">
             </div>
-            <div class="product-info" style="text-align: left;">
-                <span class="product-tag" style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #722f37; font-weight: bold;">Relax</span>
-                <h3 class="product-name" style="font-size: 18px; margin: 5px 0; color: #333;">Vela Coco Tropical</h3>
-                <p class="product-desc" style="font-size: 13px; color: #777; margin-bottom: 10px;">Dulzor y relajación</p>
-                <div class="product-price" style="font-size: 18px; font-weight: bold; color: #333; margin-bottom: 12px;">$5.200</div>
-                <div class="product-actions" style="display: flex; gap: 8px;">
-                    <button type="button" onclick="openProductModal('Vela Coco Tropical', 'Dulzor y relajación', 'img/coco.png', 'Relax', 'Fragancia cremosa y envolvente de coco natural que transporta a días de calma y sol.')" style="flex: 1; padding: 9px; background: transparent; border: 1px solid #722f37; color: #722f37; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 12px;">Ver Más</button>
-                    <button type="button" onclick="addToCart('Vela Coco Tropical', 5200, 'img/coco.png')" style="flex: 2; padding: 9px; background: #722f37; border: none; color: white; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 12px;">+ Agregar al Carrito</button>
+            <div class="product-info">
+                <span class="p-tag tag-relax">Relax</span>
+                <h3 class="product-name">Vela Coco Tropical</h3>
+                <p class="product-desc">Dulzor y relajación</p>
+                <div class="product-price" style="font-size: 16px; font-weight: 700; color: #2C2C2C; margin-bottom: 10px;">$5.200</div>
+                <div style="display: flex; gap: 8px;">
+                    <button class="btn-add-cart" type="button" onclick="openProductModal('Vela Coco Tropical', 'Dulzor y relajación', 'img/coco.png', 'Relax', 'Fragancia cremosa y envolvente de coco natural que transporta a días de calma y sol.')" style="flex: 1;">Ver Más</button>
+                    <button class="btn-add-cart" type="button" onclick="addToCart('Vela Coco Tropical', 5200, 'img/coco.png')" style="flex: 2; background-color: var(--maroon); color: #fff; border-color: var(--maroon);">+ Agregar al Carrito</button>
                 </div>
             </div>
         </div>
 
         <!-- 4. Eucalipto y Lavanda -->
-        <div class="product-card" style="background: #fff; border-radius: 12px; border: 1px solid #eee; padding: 15px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.03); display: flex; flex-direction: column; justify-content: space-between;">
-            <div style="width: 100%; height: 220px; border-radius: 8px; overflow: hidden; margin-bottom: 12px;">
-                <img src="img/eucaliptoylavanda.png" alt="Vela Eucalipto & Lavanda" class="product-img" onclick="openProductModal('Vela Eucalipto & Lavanda', 'Purificante y sedante', 'img/eucaliptoylavanda.png', 'Desconexión', 'Combinación herbal perfecta para limpiar el ambiente y promover un descanso profundo antes de dormir.')" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+        <div class="product-card">
+            <div class="product-img-box">
+                <img src="img/eucaliptoylavanda.png" alt="Vela Eucalipto & Lavanda" onclick="openProductModal('Vela Eucalipto & Lavanda', 'Purificante y sedante', 'img/eucaliptoylavanda.png', 'Desconexión', 'Combinación herbal perfecta para limpiar el ambiente y promover un descanso profundo antes de dormir.')">
             </div>
-            <div class="product-info" style="text-align: left;">
-                <span class="product-tag" style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #722f37; font-weight: bold;">Desconexión</span>
-                <h3 class="product-name" style="font-size: 18px; margin: 5px 0; color: #333;">Vela Eucalipto & Lavanda</h3>
-                <p class="product-desc" style="font-size: 13px; color: #777; margin-bottom: 10px;">Purificante y sedante</p>
-                <div class="product-price" style="font-size: 18px; font-weight: bold; color: #333; margin-bottom: 12px;">$5.200</div>
-                <div class="product-actions" style="display: flex; gap: 8px;">
-                    <button type="button" onclick="openProductModal('Vela Eucalipto & Lavanda', 'Purificante y sedante', 'img/eucaliptoylavanda.png', 'Desconexión', 'Combinación herbal perfecta para limpiar el ambiente y promover un descanso profundo antes de dormir.')" style="flex: 1; padding: 9px; background: transparent; border: 1px solid #722f37; color: #722f37; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 12px;">Ver Más</button>
-                    <button type="button" onclick="addToCart('Vela Eucalipto & Lavanda', 5200, 'img/eucaliptoylavanda.png')" style="flex: 2; padding: 9px; background: #722f37; border: none; color: white; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 12px;">+ Agregar al Carrito</button>
+            <div class="product-info">
+                <span class="p-tag tag-refrescante">Desconexión</span>
+                <h3 class="product-name">Vela Eucalipto & Lavanda</h3>
+                <p class="product-desc">Purificante y sedante</p>
+                <div class="product-price" style="font-size: 16px; font-weight: 700; color: #2C2C2C; margin-bottom: 10px;">$5.200</div>
+                <div style="display: flex; gap: 8px;">
+                    <button class="btn-add-cart" type="button" onclick="openProductModal('Vela Eucalipto & Lavanda', 'Purificante y sedante', 'img/eucaliptoylavanda.png', 'Desconexión', 'Combinación herbal perfecta para limpiar el ambiente y promover un descanso profundo antes de dormir.')" style="flex: 1;">Ver Más</button>
+                    <button class="btn-add-cart" type="button" onclick="addToCart('Vela Eucalipto & Lavanda', 5200, 'img/eucaliptoylavanda.png')" style="flex: 2; background-color: var(--maroon); color: #fff; border-color: var(--maroon);">+ Agregar al Carrito</button>
                 </div>
             </div>
         </div>
 
         <!-- 5. Jazmín -->
-        <div class="product-card" style="background: #fff; border-radius: 12px; border: 1px solid #eee; padding: 15px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.03); display: flex; flex-direction: column; justify-content: space-between;">
-            <div style="width: 100%; height: 220px; border-radius: 8px; overflow: hidden; margin-bottom: 12px;">
-                <img src="img/jazmin.png" alt="Vela Jazmín Floral" class="product-img" onclick="openProductModal('Vela Jazmín Floral', 'Armonía y bienestar', 'img/jazmin.png', 'Floral', 'Perfume sutil y romántico de flores de jazmín. Aporta tranquilidad y armoniza los espacios.')" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+        <div class="product-card">
+            <div class="product-img-box">
+                <img src="img/jazmin.png" alt="Vela Jazmín Floral" onclick="openProductModal('Vela Jazmín Floral', 'Armonía y bienestar', 'img/jazmin.png', 'Floral', 'Perfume sutil y romántico de flores de jazmín. Aporta tranquilidad y armoniza los espacios.')">
             </div>
-            <div class="product-info" style="text-align: left;">
-                <span class="product-tag" style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #722f37; font-weight: bold;">Floral</span>
-                <h3 class="product-name" style="font-size: 18px; margin: 5px 0; color: #333;">Vela Jazmín Floral</h3>
-                <p class="product-desc" style="font-size: 13px; color: #777; margin-bottom: 10px;">Armonía y bienestar</p>
-                <div class="product-price" style="font-size: 18px; font-weight: bold; color: #333; margin-bottom: 12px;">$5.200</div>
-                <div class="product-actions" style="display: flex; gap: 8px;">
-                    <button type="button" onclick="openProductModal('Vela Jazmín Floral', 'Armonía y bienestar', 'img/jazmin.png', 'Floral', 'Perfume sutil y romántico de flores de jazmín. Aporta tranquilidad y armoniza los espacios.')" style="flex: 1; padding: 9px; background: transparent; border: 1px solid #722f37; color: #722f37; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 12px;">Ver Más</button>
-                    <button type="button" onclick="addToCart('Vela Jazmín Floral', 5200, 'img/jazmin.png')" style="flex: 2; padding: 9px; background: #722f37; border: none; color: white; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 12px;">+ Agregar al Carrito</button>
+            <div class="product-info">
+                <span class="p-tag tag-suave">Floral</span>
+                <h3 class="product-name">Vela Jazmín Floral</h3>
+                <p class="product-desc">Armonía y bienestar</p>
+                <div class="product-price" style="font-size: 16px; font-weight: 700; color: #2C2C2C; margin-bottom: 10px;">$5.200</div>
+                <div style="display: flex; gap: 8px;">
+                    <button class="btn-add-cart" type="button" onclick="openProductModal('Vela Jazmín Floral', 'Armonía y bienestar', 'img/jazmin.png', 'Floral', 'Perfume sutil y romántico de flores de jazmín. Aporta tranquilidad y armoniza los espacios.')" style="flex: 1;">Ver Más</button>
+                    <button class="btn-add-cart" type="button" onclick="addToCart('Vela Jazmín Floral', 5200, 'img/jazmin.png')" style="flex: 2; background-color: var(--maroon); color: #fff; border-color: var(--maroon);">+ Agregar al Carrito</button>
                 </div>
             </div>
         </div>
 
         <!-- 6. Mango y Maracuyá -->
-        <div class="product-card" style="background: #fff; border-radius: 12px; border: 1px solid #eee; padding: 15px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.03); display: flex; flex-direction: column; justify-content: space-between;">
-            <div style="width: 100%; height: 220px; border-radius: 8px; overflow: hidden; margin-bottom: 12px;">
-                <img src="img/mangoymaracuya.png" alt="Vela Mango & Maracuyá" class="product-img" onclick="openProductModal('Vela Mango & Maracuyá', 'Frutal y chispeante', 'img/mangoymaracuya.png', 'Energía', 'Explosión de aromas frutales dulces y tropicales. Eleva la energía positiva de la casa.')" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+        <div class="product-card">
+            <div class="product-img-box">
+                <img src="img/mangoymaracuya.png" alt="Vela Mango & Maracuyá" onclick="openProductModal('Vela Mango & Maracuyá', 'Frutal y chispeante', 'img/mangoymaracuya.png', 'Energía', 'Explosión de aromas frutales dulces y tropicales. Eleva la energía positiva de la casa.')">
             </div>
-            <div class="product-info" style="text-align: left;">
-                <span class="product-tag" style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #722f37; font-weight: bold;">Energía</span>
-                <h3 class="product-name" style="font-size: 18px; margin: 5px 0; color: #333;">Vela Mango & Maracuyá</h3>
-                <p class="product-desc" style="font-size: 13px; color: #777; margin-bottom: 10px;">Frutal y chispeante</p>
-                <div class="product-price" style="font-size: 18px; font-weight: bold; color: #333; margin-bottom: 12px;">$5.200</div>
-                <div class="product-actions" style="display: flex; gap: 8px;">
-                    <button type="button" onclick="openProductModal('Vela Mango & Maracuyá', 'Frutal y chispeante', 'img/mangoymaracuya.png', 'Energía', 'Explosión de aromas frutales dulces y tropicales. Eleva la energía positiva de la casa.')" style="flex: 1; padding: 9px; background: transparent; border: 1px solid #722f37; color: #722f37; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 12px;">Ver Más</button>
-                    <button type="button" onclick="addToCart('Vela Mango & Maracuyá', 5200, 'img/mangoymaracuya.png')" style="flex: 2; padding: 9px; background: #722f37; border: none; color: white; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 12px;">+ Agregar al Carrito</button>
+            <div class="product-info">
+                <span class="p-tag tag-energia">Energía</span>
+                <h3 class="product-name">Vela Mango & Maracuyá</h3>
+                <p class="product-desc">Frutal y chispeante</p>
+                <div class="product-price" style="font-size: 16px; font-weight: 700; color: #2C2C2C; margin-bottom: 10px;">$5.200</div>
+                <div style="display: flex; gap: 8px;">
+                    <button class="btn-add-cart" type="button" onclick="openProductModal('Vela Mango & Maracuyá', 'Frutal y chispeante', 'img/mangoymaracuya.png', 'Energía', 'Explosión de aromas frutales dulces y tropicales. Eleva la energía positiva de la casa.')" style="flex: 1;">Ver Más</button>
+                    <button class="btn-add-cart" type="button" onclick="addToCart('Vela Mango & Maracuyá', 5200, 'img/mangoymaracuya.png')" style="flex: 2; background-color: var(--maroon); color: #fff; border-color: var(--maroon);">+ Agregar al Carrito</button>
                 </div>
             </div>
         </div>
 
         <!-- 7. Rosa Mosqueta -->
-        <div class="product-card" style="background: #fff; border-radius: 12px; border: 1px solid #eee; padding: 15px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.03); display: flex; flex-direction: column; justify-content: space-between;">
-            <div style="width: 100%; height: 220px; border-radius: 8px; overflow: hidden; margin-bottom: 12px;">
-                <img src="img/rosamosqueta.png" alt="Vela Rosa Mosqueta" class="product-img" onclick="openProductModal('Vela Rosa Mosqueta', 'Elegante y delicada', 'img/rosamosqueta.png', 'Sutileza', 'Notas florales suaves y delicadas que crean una atmósfera acogedora y serena.')" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+        <div class="product-card">
+            <div class="product-img-box">
+                <img src="img/rosamosqueta.png" alt="Vela Rosa Mosqueta" onclick="openProductModal('Vela Rosa Mosqueta', 'Elegante y delicada', 'img/rosamosqueta.png', 'Sutileza', 'Notas florales suaves y delicadas que crean una atmósfera acogedora y serena.')">
             </div>
-            <div class="product-info" style="text-align: left;">
-                <span class="product-tag" style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #722f37; font-weight: bold;">Sutileza</span>
-                <h3 class="product-name" style="font-size: 18px; margin: 5px 0; color: #333;">Vela Rosa Mosqueta</h3>
-                <p class="product-desc" style="font-size: 13px; color: #777; margin-bottom: 10px;">Elegante y delicada</p>
-                <div class="product-price" style="font-size: 18px; font-weight: bold; color: #333; margin-bottom: 12px;">$5.200</div>
-                <div class="product-actions" style="display: flex; gap: 8px;">
-                    <button type="button" onclick="openProductModal('Vela Rosa Mosqueta', 'Elegante y delicada', 'img/rosamosqueta.png', 'Sutileza', 'Notas florales suaves y delicadas que crean una atmósfera acogedora y serena.')" style="flex: 1; padding: 9px; background: transparent; border: 1px solid #722f37; color: #722f37; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 12px;">Ver Más</button>
-                    <button type="button" onclick="addToCart('Vela Rosa Mosqueta', 5200, 'img/rosamosqueta.png')" style="flex: 2; padding: 9px; background: #722f37; border: none; color: white; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 12px;">+ Agregar al Carrito</button>
+            <div class="product-info">
+                <span class="p-tag tag-suave">Sutileza</span>
+                <h3 class="product-name">Vela Rosa Mosqueta</h3>
+                <p class="product-desc">Elegante y delicada</p>
+                <div class="product-price" style="font-size: 16px; font-weight: 700; color: #2C2C2C; margin-bottom: 10px;">$5.200</div>
+                <div style="display: flex; gap: 8px;">
+                    <button class="btn-add-cart" type="button" onclick="openProductModal('Vela Rosa Mosqueta', 'Elegante y delicada', 'img/rosamosqueta.png', 'Sutileza', 'Notas florales suaves y delicadas que crean una atmósfera acogedora y serena.')" style="flex: 1;">Ver Más</button>
+                    <button class="btn-add-cart" type="button" onclick="addToCart('Vela Rosa Mosqueta', 5200, 'img/rosamosqueta.png')" style="flex: 2; background-color: var(--maroon); color: #fff; border-color: var(--maroon);">+ Agregar al Carrito</button>
                 </div>
             </div>
         </div>
 
         <!-- 8. Sándalo Dulce -->
-        <img src="img/sandalodulce.png" alt="Vela Sándalo Dulce" class="product-img" onclick="..." style="width: 100%; height: 100%; object-fit: cover; object-position: center 15%; cursor: pointer;">
-            <div style="width: 100%; height: 220px; border-radius: 8px; overflow: hidden; margin-bottom: 12px;">
-                <img src="img/sandalodulce.png" alt="Vela Sándalo Dulce" class="product-img" onclick="openProductModal('Vela Sándalo Dulce', 'Místico y amaderado', 'img/sandalodulce.png', 'Meditación', 'Aroma amaderado cálido con matices dulces. Perfecto para momentos de meditación y serenidad.')" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+        <div class="product-card">
+            <div class="product-img-box">
+                <img src="img/sandalodulce.png" alt="Vela Sándalo Dulce" onclick="openProductModal('Vela Sándalo Dulce', 'Místico y amaderado', 'img/sandalodulce.png', 'Meditación', 'Aroma amaderado cálido con matices dulces. Perfecto para momentos de meditación y serenidad.')">
             </div>
-            <div class="product-info" style="text-align: left;">
-                <span class="product-tag" style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #722f37; font-weight: bold;">Meditación</span>
-                <h3 class="product-name" style="font-size: 18px; margin: 5px 0; color: #333;">Vela Sándalo Dulce</h3>
-                <p class="product-desc" style="font-size: 13px; color: #777; margin-bottom: 10px;">Místico y amaderado</p>
-                <div class="product-price" style="font-size: 18px; font-weight: bold; color: #333; margin-bottom: 12px;">$5.200</div>
-                <div class="product-actions" style="display: flex; gap: 8px;">
-                    <button type="button" onclick="openProductModal('Vela Sándalo Dulce', 'Místico y amaderado', 'img/sandalodulce.png', 'Meditación', 'Aroma amaderado cálido con matices dulces. Perfecto para momentos de meditación y serenidad.')" style="flex: 1; padding: 9px; background: transparent; border: 1px solid #722f37; color: #722f37; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 12px;">Ver Más</button>
-                    <button type="button" onclick="addToCart('Vela Sándalo Dulce', 5200, 'img/sandalodulce.png')" style="flex: 2; padding: 9px; background: #722f37; border: none; color: white; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 12px;">+ Agregar al Carrito</button>
+            <div class="product-info">
+                <span class="p-tag tag-exfoliante">Meditación</span>
+                <h3 class="product-name">Vela Sándalo Dulce</h3>
+                <p class="product-desc">Místico y amaderado</p>
+                <div class="product-price" style="font-size: 16px; font-weight: 700; color: #2C2C2C; margin-bottom: 10px;">$5.200</div>
+                <div style="display: flex; gap: 8px;">
+                    <button class="btn-add-cart" type="button" onclick="openProductModal('Vela Sándalo Dulce', 'Místico y amaderado', 'img/sandalodulce.png', 'Meditación', 'Aroma amaderado cálido con matices dulces. Perfecto para momentos de meditación y serenidad.')" style="flex: 1;">Ver Más</button>
+                    <button class="btn-add-cart" type="button" onclick="addToCart('Vela Sándalo Dulce', 5200, 'img/sandalodulce.png')" style="flex: 2; background-color: var(--maroon); color: #fff; border-color: var(--maroon);">+ Agregar al Carrito</button>
                 </div>
             </div>
         </div>
 
         <!-- 9. Vainilla -->
-        <img src="img/vainilla.png" alt="Vela Vainilla Suave" class="product-img" onclick="..." style="width: 100%; height: 100%; object-fit: cover; object-position: center 10%; cursor: pointer;">
-            <div style="width: 100%; height: 220px; border-radius: 8px; overflow: hidden; margin-bottom: 12px;">
-                <img src="img/vainilla.png" alt="Vela Vainilla Suave" class="product-img" onclick="openProductModal('Vela Vainilla Suave', 'Dulzura reconfortante', 'img/vainilla.png', 'Hogar', 'Clásico aroma reconfortante que evoca calidez del hogar, dulzura y tranquilidad.')" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+        <div class="product-card">
+            <div class="product-img-box">
+                <img src="img/vainilla.png" alt="Vela Vainilla Suave" onclick="openProductModal('Vela Vainilla Suave', 'Dulzura reconfortante', 'img/vainilla.png', 'Hogar', 'Clásico aroma reconfortante que evoca calidez del hogar, dulzura y tranquilidad.')">
             </div>
-            <div class="product-info" style="text-align: left;">
-                <span class="product-tag" style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #722f37; font-weight: bold;">Hogar</span>
-                <h3 class="product-name" style="font-size: 18px; margin: 5px 0; color: #333;">Vela Vainilla Suave</h3>
-                <p class="product-desc" style="font-size: 13px; color: #777; margin-bottom: 10px;">Dulzura reconfortante</p>
-                <div class="product-price" style="font-size: 18px; font-weight: bold; color: #333; margin-bottom: 12px;">$5.200</div>
-                <div class="product-actions" style="display: flex; gap: 8px;">
-                    <button type="button" onclick="openProductModal('Vela Vainilla Suave', 'Dulzura reconfortante', 'img/vainilla.png', 'Hogar', 'Clásico aroma reconfortante que evoca calidez del hogar, dulzura y tranquilidad.')" style="flex: 1; padding: 9px; background: transparent; border: 1px solid #722f37; color: #722f37; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 12px;">Ver Más</button>
-                    <button type="button" onclick="addToCart('Vela Vainilla Suave', 5200, 'img/vainilla.png')" style="flex: 2; padding: 9px; background: #722f37; border: none; color: white; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 12px;">+ Agregar al Carrito</button>
+            <div class="product-info">
+                <span class="p-tag tag-nutritivo">Hogar</span>
+                <h3 class="product-name">Vela Vainilla Suave</h3>
+                <p class="product-desc">Dulzura reconfortante</p>
+                <div class="product-price" style="font-size: 16px; font-weight: 700; color: #2C2C2C; margin-bottom: 10px;">$5.200</div>
+                <div style="display: flex; gap: 8px;">
+                    <button class="btn-add-cart" type="button" onclick="openProductModal('Vela Vainilla Suave', 'Dulzura reconfortante', 'img/vainilla.png', 'Hogar', 'Clásico aroma reconfortante que evoca calidez del hogar, dulzura y tranquilidad.')" style="flex: 1;">Ver Más</button>
+                    <button class="btn-add-cart" type="button" onclick="addToCart('Vela Vainilla Suave', 5200, 'img/vainilla.png')" style="flex: 2; background-color: var(--maroon); color: #fff; border-color: var(--maroon);">+ Agregar al Carrito</button>
                 </div>
             </div>
         </div>
 
     </div>
 </section>
-
             <div class="pills-container">
                 <span class="pill">🌱 Café</span>
                 <span class="pill">🌱 Eucalipto - Lavanda</span>
