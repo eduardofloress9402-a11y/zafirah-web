@@ -116,7 +116,7 @@ window.sendToWhatsApp = function() {
 
     mensaje += `\n*TOTAL: $${total.toLocaleString('es-AR')}*`;
 
-    const numero = '5492966764069'; 
+    const numero = '5493516646856'; 
     const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
     window.open(url, '_blank');
 };
