@@ -235,8 +235,19 @@ function confirmPromoSelection() {
 
     const detallePromo = `Promo 6 Jabones (${seleccion.join(', ')})`;
     
+    // 1. Agrega el producto al carrito
     addToCart(detallePromo, 25000, 'img/jabones.jpg');
+    
+    // 2. Cierra la ventana emergente
     closePromoModal();
+    
+    // 3. Abre el lateral del carrito para mostrar la selección
+    if (typeof openCart === 'function') {
+        openCart();
+    } else {
+        const cartSidebar = document.getElementById('cart-sidebar');
+        if (cartSidebar) cartSidebar.style.display = 'block';
+    }
 }
 // Respuestas Automáticas del Bot
 function sendQuickReply(question) {
