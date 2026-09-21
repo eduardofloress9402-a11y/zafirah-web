@@ -295,3 +295,4 @@ function sendQuickReply(question) {
 
     msgContainer.scrollTop = msgContainer.scrollHeight;
 }
+}
