@@ -186,6 +186,58 @@ function toggleChatbot() {
     }
 }
 
+// --- LÓGICA DE PROMO SELECCIONABLE ---
+function openPromoModal() {
+    document.getElementById('promoModal').style.display = 'flex';
+}
+
+function closePromoModal() {
+    document.getElementById('promoModal').style.display = 'none';
+    document.querySelectorAll('.promo-qty').forEach(input => input.value = 0);
+    updatePromoTotal();
+}
+
+function updatePromoTotal() {
+    const inputs = document.querySelectorAll('.promo-qty');
+    let total = 0;
+    inputs.forEach(input => {
+        total += parseInt(input.value) || 0;
+    });
+
+    const countSpan = document.getElementById('promoCount');
+    const confirmBtn = document.getElementById('btnConfirmPromo');
+
+    countSpan.textContent = total;
+
+    if (total === 6) {
+        confirmBtn.disabled = false;
+        confirmBtn.style.background = 'var(--maroon, #6b2d39)';
+        confirmBtn.style.cursor = 'pointer';
+        countSpan.style.color = 'green';
+    } else {
+        confirmBtn.disabled = true;
+        confirmBtn.style.background = '#ccc';
+        confirmBtn.style.cursor = 'not-allowed';
+        countSpan.style.color = total > 6 ? 'red' : 'black';
+    }
+}
+
+function confirmPromoSelection() {
+    const inputs = document.querySelectorAll('.promo-qty');
+    let seleccion = [];
+
+    inputs.forEach(input => {
+        let cant = parseInt(input.value) || 0;
+        if (cant > 0) {
+            seleccion.push(`${cant}x ${input.dataset.name}`);
+        }
+    });
+
+    const detallePromo = `Promo 6 Jabones (${seleccion.join(', ')})`;
+    
+    addToCart(detallePromo, 25000, 'img/jabones.jpg');
+    closePromoModal();
+}
 // Respuestas Automáticas del Bot
 function sendQuickReply(question) {
     const msgContainer = document.getElementById('chatbot-messages');
