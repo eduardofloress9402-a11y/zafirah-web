@@ -1370,6 +1370,52 @@
         </div>
     </div>
 </div>
+    <!-- Modal Selector de Promo -->
+    <div id="promoModal" class="modal-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:9999; justify-content:center; align-items:center;">
+      <div style="background:#fff; padding:25px; border-radius:12px; max-width:450px; width:90%; max-height:80vh; overflow-y:auto; box-shadow:0 10px 25px rgba(0,0,0,0.2); position:relative;">
+        
+        <h3 style="margin-top:0; color:var(--maroon, #6b2d39); text-align:center;">Elegí tus 6 Jabones</h3>
+        <p style="font-size:13px; text-align:center; color:#666; margin-bottom:15px;">Seleccioná exactamente 6 unidades para armar tu caja.</p>
+        
+        <div id="promoOptionsList" style="display:flex; flex-direction:column; gap:10px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; padding:8px; background:#f9f9f9; border-radius:8px;">
+            <span>🧼 Lavanda</span>
+            <input type="number" class="promo-qty" data-name="Lavanda" min="0" max="6" value="0" style="width:50px; text-align:center; padding:4px;" onchange="updatePromoTotal()">
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center; padding:8px; background:#f9f9f9; border-radius:8px;">
+            <span>☕ Café & Exfoliante</span>
+            <input type="number" class="promo-qty" data-name="Café" min="0" max="6" value="0" style="width:50px; text-align:center; padding:4px;" onchange="updatePromoTotal()">
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center; padding:8px; background:#f9f9f9; border-radius:8px;">
+            <span>🌿 Eucalipto & Lavanda</span>
+            <input type="number" class="promo-qty" data-name="Eucalipto" min="0" max="6" value="0" style="width:50px; text-align:center; padding:4px;" onchange="updatePromoTotal()">
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center; padding:8px; background:#f9f9f9; border-radius:8px;">
+            <span>🥭 Mango & Maracuyá</span>
+            <input type="number" class="promo-qty" data-name="Mango" min="0" max="6" value="0" style="width:50px; text-align:center; padding:4px;" onchange="updatePromoTotal()">
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center; padding:8px; background:#f9f9f9; border-radius:8px;">
+            <span>🌹 Rosa Búlgara</span>
+            <input type="number" class="promo-qty" data-name="Rosa Búlgara" min="0" max="6" value="0" style="width:50px; text-align:center; padding:4px;" onchange="updatePromoTotal()">
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center; padding:8px; background:#f9f9f9; border-radius:8px;">
+            <span>🥥 Vainilla & Coco</span>
+            <input type="number" class="promo-qty" data-name="Vainilla Coco" min="0" max="6" value="0" style="width:50px; text-align:center; padding:4px;" onchange="updatePromoTotal()">
+          </div>
+        </div>
+
+        <div style="margin-top:20px; text-align:center;">
+          <p style="font-weight:bold; font-size:14px; margin-bottom:10px;">Seleccionados: <span id="promoCount">0</span> / 6</p>
+          <button id="btnConfirmPromo" onclick="confirmPromoSelection()" disabled style="background:#ccc; color:#fff; border:none; padding:10px 20px; border-radius:6px; cursor:not-allowed; width:100%; font-weight:bold;">AGREGAR AL CARRITO</button>
+          <button onclick="closePromoModal()" style="background:none; border:none; color:#888; margin-top:10px; cursor:pointer; font-size:12px; text-decoration:underline;">Cancelar</button>
+        </div>
+
+      </div>
+    </div>
+
+    <script src="script.js?v=2.0"></script>
+</body>
+</html>
     <script src="script.js?v=2.0"></script>
 </body>
 </html>
