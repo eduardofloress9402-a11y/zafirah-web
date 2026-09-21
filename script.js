@@ -292,7 +292,4 @@ function sendQuickReply(question) {
         msgContainer.appendChild(botMsg);
         msgContainer.scrollTop = msgContainer.scrollHeight;
     }, 600);
-
-    msgContainer.scrollTop = msgContainer.scrollHeight;
-}
 }
