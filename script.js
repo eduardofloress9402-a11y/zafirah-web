@@ -304,3 +304,17 @@ function sendQuickReply(question) {
         msgContainer.scrollTop = msgContainer.scrollHeight;
     }, 600);
 }
+
+// Función para abrir y cerrar la ventana del Chatbot
+function toggleChatbot() {
+    const chatbotWindow = document.getElementById('chatbot-window');
+    if (chatbotWindow) {
+        if (chatbotWindow.style.display === 'none' || chatbotWindow.classList.contains('hidden') || chatbotWindow.style.display === '') {
+            chatbotWindow.style.display = 'flex';
+            chatbotWindow.classList.remove('hidden');
+        } else {
+            chatbotWindow.style.display = 'none';
+            chatbotWindow.classList.add('hidden');
+        }
+    }
+}
