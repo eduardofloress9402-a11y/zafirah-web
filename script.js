@@ -240,11 +240,22 @@ function confirmPromoSelection() {
         addToCart(detallePromo, 25000, 'img/jabones.jpg');
     }
 
-    // 2. Cerrar ventana emergente
+    // 2. Cerrar la ventana de la promo
     closePromoModal();
     
-    // 3. Abrir/Mostrar el carrito
-    openCartModal();
+    // 3. Abrir la caja desplegable del carrito directamente
+    const dropdown = document.getElementById('cart-dropdown');
+    if (dropdown) {
+        dropdown.style.display = 'block';
+    }
+}
+
+// Función global para abrir el carrito desplegable
+function openCartModal() {
+    const dropdown = document.getElementById('cart-dropdown');
+    if (dropdown) {
+        dropdown.style.display = 'block';
+    }
 }
 
 // Función global para forzar la apertura del carrito
