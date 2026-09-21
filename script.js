@@ -237,7 +237,7 @@ function confirmPromoSelection() {
     
     // 1. Agregar al carrito
     if (typeof addToCart === 'function') {
-        addToCart(detallePromo, 25000, 'img/jabones.jpg');
+        addToCart(detallePromo, 25000, 'https://images.unsplash.com/photo-1607006344380-b6775a0824a7?w=100');
     }
 
     // 2. Cerrar la ventana de la promo
